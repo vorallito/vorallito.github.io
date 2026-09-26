@@ -1,4 +1,4 @@
-# Astra, Sol e Luna chegaram. Seu ChatGPT já sabe como você trabalha?
+# GPT-6 Astra, GPT-6 Sol e GPT-6 Luna chegaram. Seu ChatGPT já sabe como você trabalha?
 
 **A família GPT-6 amplia o que a IA faz no trabalho. Este roteiro mostra como escolher o modelo e transformar seu processo em uma receita reutilizável.**
 
@@ -6,19 +6,19 @@ Você entrega ao ChatGPT uma proposta comercial, uma planilha e as notas da reun
 
 Na segunda tentativa, você escreve: “Não invente decisões. Cite a origem de cada número. Siga o formato usado pela equipe.” Na terceira, cola tudo outra vez.
 
-Agora temos três modelos da mesma geração. **Astra** foi apresentado para os trabalhos mais exigentes, com avanços em tarefas de várias etapas, uso do computador e criação de documentos, planilhas e apresentações. **Sol e Luna, lançados em 22 de setembro**, levam parte desses avanços a opções mais rápidas e com menor preço na API. A pergunta útil não é qual nome parece mais poderoso. É **qual parte do seu trabalho pede mais capacidade e qual parte precisa de um processo claro e repetível**. [Fontes: OpenAI sobre Astra](https://openai.com/index/gpt-6-astra/) e [sobre Sol e Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/).
+Agora temos três modelos da mesma geração. **GPT-6 Astra** foi apresentado para os trabalhos mais exigentes, com avanços em tarefas de várias etapas, uso do computador e criação de documentos, planilhas e apresentações. **GPT-6 Sol e GPT-6 Luna, lançados em 22 de setembro**, levam parte desses avanços a opções mais rápidas e com menor preço na API. A pergunta útil não é qual nome parece mais poderoso. É **qual parte do seu trabalho pede mais capacidade e qual parte precisa de um processo claro e repetível**. [Fontes: OpenAI sobre GPT-6 Astra](https://openai.com/index/gpt-6-astra/) e [sobre GPT-6 Sol e GPT-6 Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/).
 
 No [guia anterior](https://vorallito.substack.com/p/pare-de-colar-o-mesmo-contexto-no), mostrei como pensar nisso com Claude Skills. Esta é a edição para quem trabalha com **ChatGPT**.
 
 ## Uma família, três ritmos de trabalho
 
-**Astra:** eu o escolheria para uma decisão difícil que atravessa vários arquivos e ferramentas. Pense em reconciliar três versões de uma proposta, comentários do jurídico e uma planilha de preços antes de produzir o documento final. É a opção de maior capacidade da família segundo a OpenAI. [Fonte](https://openai.com/index/gpt-6-astra/).
+**GPT-6 Astra:** eu o escolheria para uma decisão difícil que atravessa vários arquivos e ferramentas. Pense em reconciliar três versões de uma proposta, comentários do jurídico e uma planilha de preços antes de produzir o documento final. É a opção de maior capacidade da família segundo a OpenAI. [Fonte](https://openai.com/index/gpt-6-astra/).
 
-**Sol:** eu testaria em análises, pesquisas e redações profissionais que se repetem, especialmente quando preciso revisar a resposta algumas vezes. A OpenAI o apresenta como uma opção forte para trabalho difícil, com mais margem para iterar; na API, seu preço por token é menor que o de Astra. [Fontes: Sol](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [Astra](https://openai.com/index/gpt-6-astra/).
+**GPT-6 Sol:** eu testaria em análises, pesquisas e redações profissionais que se repetem, especialmente quando preciso revisar a resposta algumas vezes. A OpenAI o apresenta como uma opção forte para trabalho difícil, com mais margem para iterar; na API, seu preço por token é menor que o de GPT-6 Astra. [Fontes: GPT-6 Sol](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [GPT-6 Astra](https://openai.com/index/gpt-6-astra/).
 
-**Luna:** eu começaria por triagens, classificações e primeiros rascunhos com critérios claros, conferindo se o resultado atende ao padrão antes de ampliar o uso. Entre os três, tem o menor preço por token na API. [Fontes: Sol e Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [Astra](https://openai.com/index/gpt-6-astra/).
+**GPT-6 Luna:** eu começaria por triagens, classificações e primeiros rascunhos com critérios claros, conferindo se o resultado atende ao padrão antes de ampliar o uso. Entre os três, tem o menor preço por token na API. [Fontes: GPT-6 Sol e GPT-6 Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [GPT-6 Astra](https://openai.com/index/gpt-6-astra/).
 
-Esses são **critérios editoriais para escolher o primeiro teste**, não resultados de uma comparação que executei. Sol e Luna estão disponíveis em **ChatGPT Work e Codex** para contas elegíveis; a OpenAI informa que eles ainda não aparecem nas conversas comuns de Chat. O acesso a Astra, os limites de uso e as opções mostradas no seletor dependem do plano e das configurações do workspace. [Fontes: lançamento](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [Central de Ajuda](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex).
+Esses são **critérios editoriais para escolher o primeiro teste**, não resultados de uma comparação que executei. GPT-6 Sol e GPT-6 Luna estão disponíveis em **ChatGPT Work e Codex** para contas elegíveis; a OpenAI informa que eles ainda não aparecem nas conversas comuns de Chat. O acesso a GPT-6 Astra, os limites de uso e as opções mostradas no seletor dependem do plano e das configurações do workspace. [Fontes: lançamento](https://openai.com/index/introducing-gpt-6-sol-and-luna/) e [Central de Ajuda](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex).
 
 ## Quatro peças, quatro funções
 
@@ -27,7 +27,7 @@ Antes de baixar qualquer coleção de prompts, separe as peças do trabalho:
 - **Projeto** guarda conversas, arquivos e instruções de um assunto contínuo. Exemplo: “Propostas comerciais”, com modelo aprovado e glossário da equipe.
 - **Skill** define um procedimento reutilizável para uma tarefa específica. Exemplo: revisar uma proposta, separando fatos de hipóteses e conferindo números.
 - **Work** executa trabalho de várias etapas e produz entregáveis. Exemplo: ler os materiais, montar um documento e revisar o arquivo final.
-- **Modelo** determina a capacidade usada na execução. Exemplo: Astra para reconciliar fontes conflitantes; Sol para revisar uma análise; Luna para uma triagem bem definida.
+- **Modelo** determina a capacidade usada na execução. Exemplo: GPT-6 Astra para reconciliar fontes conflitantes; GPT-6 Sol para revisar uma análise; GPT-6 Luna para uma triagem bem definida.
 
 [Projetos](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) estão disponíveis para usuários conectados, conforme plano e configuração. As [Skills nativas do ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt) são oferecidas a contas elegíveis Business, Enterprise, Healthcare e Edu e podem depender de liberação pelo administrador. O [modo Work](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex) atende tarefas mais longas e produz arquivos; seu acesso também depende do plano.
 
@@ -63,15 +63,15 @@ Se o recurso de Skills não estiver disponível, mantenha o procedimento nas ins
 
 ## Uma tarefa, três formas de aproveitar a família
 
-Na revisão da proposta, eu começaria com **Luna** para identificar campos ausentes e classificar trechos como fato, estimativa ou pendência. Pediria a **Sol** uma primeira comparação entre proposta, regras comerciais e modelo aprovado. Levaria a **Astra** a etapa mais difícil: resolver divergências entre versões, produzir o arquivo final e conferir sua consistência. Se uma etapa simples falhar no seu teste, suba a capacidade; se o resultado estiver correto, guarde o procedimento.
+Na revisão da proposta, eu começaria com **GPT-6 Luna** para identificar campos ausentes e classificar trechos como fato, estimativa ou pendência. Pediria a **GPT-6 Sol** uma primeira comparação entre proposta, regras comerciais e modelo aprovado. Levaria a **GPT-6 Astra** a etapa mais difícil: resolver divergências entre versões, produzir o arquivo final e conferir sua consistência. Se uma etapa simples falhar no seu teste, suba a capacidade; se o resultado estiver correto, guarde o procedimento.
 
-Você não precisa trocar de modelo três vezes em toda proposta. O exemplo mostra **como decidir onde investir mais capacidade**. Em qualquer um deles, o resultado melhora quando o contexto, a tarefa e os critérios de conferência estão explícitos. Astra pode consumir sua franquia de Work mais rapidamente, conforme o tipo e tamanho da tarefa. [Fonte: OpenAI](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex).
+Você não precisa trocar de modelo três vezes em toda proposta. O exemplo mostra **como decidir onde investir mais capacidade**. Em qualquer um deles, o resultado melhora quando o contexto, a tarefa e os critérios de conferência estão explícitos. GPT-6 Astra pode consumir sua franquia de Work mais rapidamente, conforme o tipo e tamanho da tarefa. [Fonte: OpenAI](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex).
 
 ## Três usos que eu montaria em seguida
 
 **1. Reuniões → decisões verificáveis.** Entregue notas e peça três blocos: decisões tomadas, ações confirmadas e pontos a confirmar. Responsável e prazo só entram quando constarem da fonte. A Skill pode exigir esse formato sempre que você pedir uma ata ou plano de ação.
 
-**2. Pesquisa → síntese com trilha de fontes.** Defina a pergunta, os documentos permitidos e uma tabela com afirmação, evidência, divergência e data. Work e Astra podem ajudar quando a pesquisa atravessa muitos documentos; a revisão humana deve conseguir voltar de cada conclusão à origem.
+**2. Pesquisa → síntese com trilha de fontes.** Defina a pergunta, os documentos permitidos e uma tabela com afirmação, evidência, divergência e data. Work e GPT-6 Astra podem ajudar quando a pesquisa atravessa muitos documentos; a revisão humana deve conseguir voltar de cada conclusão à origem.
 
 **3. Planilhas → números auditáveis.** Dê o arquivo, o cálculo esperado e dois exemplos conferidos manualmente. Peça que a saída identifique células alteradas, fórmulas, unidades e valores sem fonte. Abra a planilha final antes de encaminhá-la.
 
