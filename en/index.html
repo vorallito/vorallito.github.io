@@ -6,6 +6,8 @@
 <meta property="og:url" content="https://vorallito.github.io/en/">
 <meta property="og:image" content="https://vorallito.github.io/capa.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="pt-BR" href="https://vorallito.github.io/">
+<link rel="alternate" hreflang="en" href="https://vorallito.github.io/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -57,6 +59,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;l
 .logo{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.03em;text-decoration:none;display:flex;align-items:center;gap:10px}
 .logo .cap{width:30px;height:14px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--brand) 50%,color-mix(in srgb,var(--brand) 25%,var(--card)) 50%);transform:rotate(-20deg)}
 .top .btn{padding:9px 16px;font-size:14px}
+.top-r{display:flex;align-items:center;gap:14px}
+.lang{font-family:var(--mono);font-size:13px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.lang:hover{color:var(--brand)}
 
 /* hero */
 .hero{padding-block:56px 36px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
@@ -257,7 +262,8 @@ footer{border-top:1px solid var(--line);padding-block:20px 40px;font-family:var(
 <header class="top">
   <div class="wrap">
     <a class="logo" href="https://vorallito.substack.com/" aria-label="Vorallito on Substack"><span class="cap" aria-hidden="true"></span>Vorallito</a>
-    <a class="btn" href="https://vorallito.substack.com/subscribe">Get notified</a>
+    <div class="top-r"><a class="lang" href="https://vorallito.github.io/" hreflang="pt-BR" lang="pt-BR">Português</a>
+    <a class="btn" href="https://vorallito.substack.com/subscribe">Get notified</a></div>
   </div>
 </header>
 
@@ -283,10 +289,10 @@ footer{border-top:1px solid var(--line);padding-block:20px 40px;font-family:var(
     <div class="autor-marca" aria-hidden="true">CHECKED<br><small>SEP 25, 2026</small></div>
     <div>
       <div class="eyebrow">Who checked</div>
-      <h2 id="h-autor">I use AI for work. That's why I check before I recommend.</h2>
-      <p>Every day I coordinate several Codex and Claude Code sessions on the same project, and each one needs to know what the others decided. I learned that the risk is not the AI making mistakes. It is the AI being wrong with confidence and nobody noticing.</p>
-      <p>So I follow one rule in everything I do: anything not checked gets the “not verified” stamp. I keep a shared log where each session reads the current state before it starts and writes down what it did before it leaves. A number without a source does not go in.</p>
-      <p class="autor-fecho">This pharmacy follows the same rule.</p>
+      <h2 id="h-autor">I use AI in my work, which is precisely why I verify before I recommend.</h2>
+      <p>On any given day, I am orchestrating several Codex and Claude Code sessions on a single project, each of which has to know what the others have decided. What I have come to understand is that the real danger is not that AI gets things wrong. It is that it gets them wrong with complete confidence, and nobody notices.</p>
+      <p>So a single principle governs everything I do: whatever I have not verified carries a “not verified” stamp. I keep a shared log that every session consults before it begins and updates before it signs off. No figure makes it in without a source.</p>
+      <p class="autor-fecho">This pharmacy abides by the same principle.</p>
     </div>
   </div>
 </section>
