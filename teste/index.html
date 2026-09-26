@@ -127,6 +127,21 @@ footer{padding:30px 0 50px;color:var(--ink-2);font-size:13px}
   <p class="muted">Média das etapas que você já rodou (1 a 5). Fidelidade, itens pedidos e dados pessoais são checados automaticamente; clareza e porquê são as suas notas.</p>
   <div class="card" style="overflow:auto"><table id="placar"></table></div>
   <p id="veredito" class="muted"></p>
+  <div class="card" id="compartilhar" style="margin-top:14px">
+    <h3>Compartilhe o seu resultado</h3>
+    <p class="muted">O cartão mostra só a sua área e as notas. Nada do seu serviço nem dos números do seu cliente.</p>
+    <div class="row"><button class="btn" id="gerarCartao" type="button">Gerar meu cartão</button></div>
+    <div id="cartaoBox" hidden style="margin-top:12px">
+      <img id="cartaoImg" alt="Cartão com o resultado do teste" style="width:100%;max-width:420px;border-radius:12px;border:1px solid var(--line);display:block">
+      <div class="row" style="margin-top:10px">
+        <button class="btn sm" id="shareNativo" type="button" hidden>Compartilhar</button>
+        <a class="btn alt sm" id="baixarCartao" download="meu-teste-de-estresse.png">Baixar imagem</a>
+        <button class="btn alt sm" id="copiarTexto" type="button">Copiar texto</button>
+        <a class="btn alt sm" id="shareWpp" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn alt sm" id="shareBsky" target="_blank" rel="noopener">Bluesky</a>
+      </div>
+    </div>
+  </div>
   <div class="grid g2" style="margin-top:14px">
     <div class="card"><h3>Medalhas</h3><p class="muted">Uma por etapa com as quatro IAs rodadas.</p><div class="medalhas" id="medalhas"></div></div>
     <div class="card"><h3>Diário de testes</h3><p class="muted">Salva o caso, as respostas e as notas neste navegador.</p>
@@ -319,6 +334,60 @@ function pintarPlacar(){
     $("#veredito").innerHTML=`No seu caso, até aqui: <b>${nome(rodadas[0])}</b> na frente (${fmt(medias[rodadas[0]])}). Olhe etapa por etapa: a melhor IA pode mudar de uma para outra.`; }
   $("#medalhas").innerHTML=Object.entries(MED).map(([tid,l])=>{ const on=IAS.every(([ia])=>((S.resp[tid]||{})[ia]||"").trim()); return `<span class="medalha ${on?"on":""}">${on?"★":"☆"} ${l}</span>`; }).join("");
 }
+
+// ---------- cartão de resultado ----------
+const LINK_PUBLICO="https://vorallito.github.io/teste/";
+function resultadoAtual(){
+  const r=[];
+  IAS.forEach(([ia,nome,cor])=>{
+    const av=TAREFAS.tarefas.map(t=>avaliar(t.id,ia)).filter(Boolean); if(!av.length) return;
+    const vals=["fid","cumpre","clareza","porque","lgpd"].map(k=>{const v=av.map(a=>a[k]).filter(x=>x!=null); return v.length? v.reduce((a,b)=>a+b,0)/v.length:null;}).filter(v=>v!=null);
+    r.push({ia,nome,cor,media:vals.reduce((a,b)=>a+b,0)/vals.length,etapas:av.length});
+  });
+  return r.sort((a,b)=>b.media-a.media);
+}
+function textoCompartilhar(r){
+  const area=(S.caso.area||"meu serviço").trim();
+  return `Testei ${r.length} IAs no meu caso (${area}) para responder "por que você e não o mais barato?". `+
+    r.map(x=>`${x.nome} ${fmt(x.media)}`).join(" · ")+`. Faça o seu teste grátis: ${LINK_PUBLICO}`;
+}
+async function desenharCartao(r){
+  try{ await document.fonts.ready; }catch(e){}
+  const c=document.createElement("canvas"); c.width=1080; c.height=1080; const g=c.getContext("2d");
+  const grad=g.createRadialGradient(780,700,40,780,700,900); grad.addColorStop(0,"#3a0c09"); grad.addColorStop(.45,"#160807"); grad.addColorStop(1,"#0B0909");
+  g.fillStyle=grad; g.fillRect(0,0,1080,1080);
+  g.fillStyle="#FF3B2E"; g.font="34px 'Bebas Neue', Impact, sans-serif"; g.fillText("VORALLITO · TESTE DE ESTRESSE DA PROPOSTA",72,110);
+  g.fillStyle="#F8ECDC"; g.font="96px 'Bebas Neue', Impact, sans-serif";
+  g.fillText("QUEM DEFENDEU",72,215); g.fillText("MELHOR O MEU PREÇO?",72,310);
+  const area=(S.caso.area||"meu serviço").trim().slice(0,48);
+  g.font="34px 'Instrument Sans', system-ui, sans-serif"; g.fillStyle="rgba(248,236,220,.85)"; g.fillText("Meu caso: "+area,72,375);
+  const cores={claude:"#C4622D",chatgpt:"#10A37F",gemini:"#3B6FE0",grok:"#EEF1F5"};
+  r.slice(0,4).forEach((x,i)=>{
+    const y=470+i*120, w=Math.round(620*(x.media/5));
+    g.fillStyle="#F8ECDC"; g.font="56px 'Bebas Neue', Impact, sans-serif"; g.fillText((i===0?"★ ":"")+x.nome.toUpperCase(),72,y);
+    g.fillStyle="rgba(248,236,220,.12)"; g.fillRect(72,y+18,620,22);
+    g.fillStyle=cores[x.ia]||"#FF3B2E"; g.fillRect(72,y+18,w,22);
+    g.fillStyle="#FF3B2E"; g.font="64px 'Bebas Neue', Impact, sans-serif"; g.fillText(fmt(x.media),730,y+40);
+    g.fillStyle="rgba(248,236,220,.7)"; g.font="24px 'IBM Plex Mono', monospace"; g.fillText(x.etapas+"/4 etapas",830,y+36);
+  });
+  g.fillStyle="rgba(248,236,220,.8)"; g.font="28px 'IBM Plex Mono', monospace"; g.fillText("Faça o seu grátis: vorallito.github.io/teste",72,1010);
+  g.save(); g.translate(930,150); g.rotate(-0.35);
+  g.shadowColor="rgba(255,40,25,.6)"; g.shadowBlur=30;
+  g.fillStyle="#E0201A"; g.beginPath(); g.roundRect(-80,-32,80,64,[32,0,0,32]); g.fill();
+  g.fillStyle="#F4D9D4"; g.beginPath(); g.roundRect(0,-32,80,64,[0,32,32,0]); g.fill(); g.restore();
+  return c;
+}
+$("#gerarCartao").onclick=async()=>{
+  const r=resultadoAtual();
+  if(r.length<2){ toast("Rode pelo menos duas IAs em uma etapa"); return; }
+  const c=await desenharCartao(r); const url=c.toDataURL("image/png"); const txt=textoCompartilhar(r);
+  $("#cartaoImg").src=url; $("#baixarCartao").href=url; $("#cartaoBox").hidden=false;
+  $("#copiarTexto").onclick=()=>copiar(txt);
+  $("#shareWpp").href="https://wa.me/?text="+encodeURIComponent(txt);
+  $("#shareBsky").href="https://bsky.app/intent/compose?text="+encodeURIComponent(txt);
+  c.toBlob(b=>{ const f=new File([b],"meu-teste-de-estresse.png",{type:"image/png"});
+    if(navigator.canShare && navigator.canShare({files:[f]})){ const bt=$("#shareNativo"); bt.hidden=false; bt.onclick=()=>navigator.share({files:[f],text:txt}).catch(()=>{}); } });
+};
 
 // ---------- diário ----------
 function pintarDiario(){
