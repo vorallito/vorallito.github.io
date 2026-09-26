@@ -1,0 +1,47 @@
+# Repositório PÚBLICO (vorallito.github.io). Tudo o que entrar aqui fica visível na internet.
+# Regras completas em AGENTS.md.
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Segredos e credenciais: nunca publicar
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*secret*
+*token*
+.npmrc
+.netrc
+
+# Ferramentas e dependências
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.cache/
+
+# Rascunhos, notas internas e arquivos de trabalho (ficam no repo privado vorallito-fonte)
+HANDOFF*.md
+*_backup*
+*.bak
+*.tmp
+*.log
+_print.html
+rascunho*/
+drafts/
+notas/
+estrategia/
+
+# Dados de assinantes e exportações do Substack
+*.csv
+export*/
