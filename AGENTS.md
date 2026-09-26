@@ -16,6 +16,7 @@ Mais de um agente publica aqui (Claude Code e ChatGPT/Codex). Siga estas regras 
 |---|---|---|
 | `index.html`, `en/`, `img/`, `capa.png`, `Farmacia_de_Skills_Vorallito.pdf`, `revisao-semanal.zip` | Farmácia de Skills (Claude Code) | `python3 build.py --site --en` na pasta `vorallito_handoff/`. Não edite à mão. |
 | `chatgpt-gpt6/` | Guia GPT-6 (ChatGPT/Codex) | pelo próprio projeto |
+| pastas `lab-*` (endereço não listado) | Teste de Estresse da Proposta (Claude Code) | `python3 montar.py --publicar` na pasta `vorallito_handoff/lab/`. Não edite à mão; não divulgue o endereço fora do post pago. |
 | `AGENTS.md`, `CLAUDE.md`, `.nojekyll`, `.gitignore` | regras do repositório | à mão, com cuidado |
 
 5. Projeto novo: crie uma pasta nova e acrescente uma linha na tabela acima no mesmo commit.
