@@ -1,0 +1,639 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><title>Skills Pharmacy</title>
+<meta name="description" content="Vorallito guide to Claude Skills for professionals who use AI at work.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skills Pharmacy · Vorallito">
+<meta property="og:description" content="76 Claude skills by area of work, with a risk label. Stop pasting the same context into Claude every week.">
+<meta property="og:url" content="https://vorallito.github.io/en/">
+<meta property="og:image" content="https://vorallito.github.io/capa.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F2F4F6; --card:#FFFFFF; --ink:#131C26; --ink-2:#4A5563; --line:#D9DEE5;
+  --brand:#D0201A; --brand-ink:#FFFFFF; --brand-soft:#FBE3E1;
+  --t-livre:#1E8E5A; --t-livre-bg:#E2F4EA;
+  --t-verm:#C8322B; --t-verm-bg:#FBE6E4;
+  --t-exp:#9A5B00; --t-exp-bg:#FBEFD9; --t-diy:#5B3FC4; --t-diy-bg:#ECE7FF;
+  --c1:var(--brand); --c2:#E0662A; --c3:#0F8A8A; --c4:#B8325E; --c5:#6B4FD8; --c6:#C99A12; --c7:#2E7D32; --c8:#3B6FA8; --c9:#8A5A2B; --c10:#5C6B7A;
+  --display:"Bebas Neue", "Oswald", "Arial Narrow", Impact, sans-serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r-pill:999px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#0D131B; --card:#151E29; --ink:#EEF2F7; --ink-2:#A3AEBC; --line:#26313F;
+    --brand:#FF4A3D; --brand-ink:#140B0A; --brand-soft:#3A1512;
+    --t-livre:#5FD39A; --t-livre-bg:#12291E;
+    --t-verm:#FF7A70; --t-verm-bg:#2E1614;
+    --t-exp:#F2B45C; --t-exp-bg:#2E2412; --t-diy:#B7A6FF; --t-diy-bg:#221C3D;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0D131B; --card:#151E29; --ink:#EEF2F7; --ink-2:#A3AEBC; --line:#26313F;
+  --brand:#FF4A3D; --brand-ink:#140B0A; --brand-soft:#3A1512;
+  --t-livre:#5FD39A; --t-livre-bg:#12291E;
+  --t-verm:#FF7A70; --t-verm-bg:#2E1614;
+  --t-exp:#F2B45C; --t-exp-bg:#2E2412; --t-diy:#B7A6FF; --t-diy-bg:#221C3D;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0;padding-inline:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:.01em;line-height:.95}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:12px 22px;border-radius:var(--r-pill);border:0;background:var(--brand);color:var(--brand-ink);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logo{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.03em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo .cap{width:30px;height:14px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--brand) 50%,color-mix(in srgb,var(--brand) 25%,var(--card)) 50%);transform:rotate(-20deg)}
+.top .btn{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{padding-block:56px 36px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(48px,7.6vw,96px);line-height:.92;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lede{font-size:19px;color:var(--ink-2);max-width:56ch;margin:20px 0 26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.blister{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.blister .slot{aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:inset 0 2px 6px rgba(0,0,0,.08)}
+.blister .slot i{display:block;width:62%;height:28%;border-radius:var(--r-pill);transform:rotate(-30deg)}
+.blister .num{grid-column:1/-1;display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:12px}
+.blister .num b{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;color:var(--ink);display:block}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stat{font-family:var(--mono);font-size:13px;padding:7px 14px;border-radius:var(--r-pill);background:var(--card);border:1px solid var(--line)}
+.stat b{font-family:var(--body);font-weight:700;color:var(--ink)}
+
+/* sections */
+section{padding-block:40px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(34px,4.4vw,50px)}
+.sec-head p{color:var(--ink-2);max-width:60ch;margin:8px 0 0}
+
+/* tarjas */
+.tarjas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tarja{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.tarja .band{height:10px}
+.tarja .in{padding:18px 20px}
+.tarja h3{font-size:24px;margin-bottom:8px;letter-spacing:.02em}
+.tarja p{margin:0;color:var(--ink-2);font-size:15px}
+
+/* receita */
+.receita{background:var(--ink);color:var(--paper);border-radius:32px;padding:32px}
+.receita .eyebrow{color:color-mix(in srgb,var(--paper) 65%,transparent)}
+.receita h2{font-size:clamp(34px,4.4vw,50px);margin-top:8px}
+.receita p{color:color-mix(in srgb,var(--paper) 75%,transparent);max-width:60ch}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.chip{font-family:var(--body);font-size:14px;font-weight:600;padding:8px 16px;border-radius:var(--r-pill);border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.rx{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.rx a{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--r-pill);background:color-mix(in srgb,var(--paper) 10%,transparent);text-decoration:none;font-weight:600}
+.rx a span{font-family:var(--mono);font-size:12px;opacity:.7}
+.rx a em{display:block;font-style:normal;font-weight:400;font-size:12.5px;opacity:.7}
+.rx a{border-radius:20px}
+.rx a b{font-weight:600}
+.rx-note{font-family:var(--mono);font-size:12px;margin-top:14px;opacity:.7}
+
+/* filtros */
+.filters{position:sticky;top:calc(env(safe-area-inset-top,0px) + 57px);z-index:5;background:var(--paper);padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters .chip{font-size:13px;padding:6px 13px;color:var(--ink)}
+.filters input{flex:1 1 200px;min-width:0;font:inherit;font-size:15px;padding:8px 16px;border-radius:var(--r-pill);border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.filters .count{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+
+/* categorias e pílulas */
+.cat{padding-block:34px 10px}
+.cat-head{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:baseline;margin-bottom:18px}
+.cat-num{font-family:var(--display);font-weight:400;font-size:60px;line-height:.85;color:var(--cc)}
+.cat-head h2{font-size:clamp(32px,4vw,46px)}
+.cat-head p{grid-column:2;margin:0;color:var(--ink-2);max-width:62ch}
+.pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pill{position:relative;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:20px 22px 18px 22px;display:flex;flex-direction:column;gap:10px}
+.pill::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;border-radius:30px 0 0 30px}
+.pill-top{display:flex;align-items:center;gap:10px}
+.capsule{flex:0 0 auto;width:42px;height:18px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--cc) 50%,color-mix(in srgb,var(--cc) 25%,var(--card)) 50%);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--cc) 40%,transparent)}
+.pill .n{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.pill .nm{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.pill h3{font-family:var(--body);font-weight:700;font-size:18px;letter-spacing:0;line-height:1.2}
+.pill .apelido{font-size:13.5px;color:var(--ink-2);line-height:1.3}
+.pill-top{align-items:flex-start}
+.pill-top .capsule{margin-top:4px}
+.fav{border:0;background:transparent;color:var(--ink-2);font-size:20px;cursor:pointer;line-height:1;padding:4px}
+.fav[aria-pressed="true"]{color:var(--c6)}
+.badge{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-pill)}
+.badge.livre{color:var(--t-livre);background:var(--t-livre-bg)}
+.badge.verm{color:var(--t-verm);background:var(--t-verm-bg)}
+.badge.exp{color:var(--t-exp);background:var(--t-exp-bg)}
+.badge.diy{color:var(--t-diy);background:var(--t-diy-bg)}
+.bula{margin:0;display:grid;gap:6px}
+.bula dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.bula dd{margin:0 0 4px;font-size:15px}
+.bula dt.warn{color:var(--t-exp)}
+.bula dd.warn{font-size:14px;color:var(--ink-2)}
+.pill .go{margin-top:auto;align-self:flex-start;font-weight:600;font-size:14px;text-decoration:none;padding:8px 14px;border-radius:var(--r-pill);background:var(--paper)}
+.pill .go:hover{background:var(--brand-soft)}
+.pill .new{position:absolute;top:-9px;right:20px;font-family:var(--mono);font-size:11px;background:var(--brand);color:var(--brand-ink);padding:2px 9px;border-radius:var(--r-pill)}
+
+/* ações de compartilhar */
+.share{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.share .btn{font-size:14px;padding:9px 16px}
+.share .btn.alt{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.share small{font-family:var(--mono);font-size:12px;opacity:.75}
+.rx-cta{margin-top:18px;padding-top:16px;border-top:1px dashed color-mix(in srgb,var(--paper) 30%,transparent)}
+.rx-cta b{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.02em;display:block;margin-bottom:4px}
+.micro{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin-top:10px}
+.pill .hot{position:absolute;top:-9px;right:20px;font-family:var(--mono);font-size:11px;background:var(--c2);color:#fff;padding:2px 9px;border-radius:var(--r-pill)}
+.cat,.pill{scroll-margin-top:140px}
+/* instalar + dados */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px 24px}
+.box h3{font-size:28px;margin-bottom:12px;letter-spacing:.02em}
+.box ol,.box ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:15px}
+.box li span{color:var(--ink-2)}
+.box .src{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin-top:12px}
+
+/* autor */
+.autor-in{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:30px}
+.autor-marca{font-family:var(--display);font-size:30px;line-height:.95;letter-spacing:.04em;color:var(--brand);border:3px solid var(--brand);border-radius:10px;padding:10px 14px;transform:rotate(-6deg);margin-top:18px;text-align:center}
+.autor h2{font-size:clamp(30px,3.8vw,44px);margin:6px 0 14px;max-width:22ch}
+.autor p{color:var(--ink-2);max-width:62ch;margin:0 0 10px;font-size:17px}
+.autor-marca small{font-size:.72em;letter-spacing:.12em}
+.autor .autor-fecho{color:var(--ink);font-weight:600}
+
+/* CTA meio */
+.cta-mid{margin-block:30px;border-radius:32px;padding:30px;background:var(--brand);color:var(--brand-ink);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.cta-mid h3{font-size:clamp(30px,3.6vw,42px)}
+.cta-mid p{margin:8px 0 0;opacity:.88;max-width:58ch}
+.cta-mid .btn{background:var(--brand-ink);color:var(--brand)}
+
+/* checklist */
+.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;list-style:none;padding:0;margin:0}
+.check label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px 18px;cursor:pointer}
+.check input{accent-color:var(--brand);width:18px;height:18px;margin-top:3px;flex:0 0 auto}
+.check b{display:block}
+.check span{color:var(--ink-2);font-size:15px}
+
+/* nota */
+.nota{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px}
+.nota ul{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--ink-2);font-size:15px}
+.nota li b{color:var(--ink)}
+
+/* rodapé CTA */
+.final{text-align:left;padding-block:56px 70px}
+.final h2{font-size:clamp(42px,6.4vw,78px);line-height:.92;max-width:16ch}
+.final p{color:var(--ink-2);font-size:18px;max-width:58ch}
+footer{border-top:1px solid var(--line);padding-block:20px 40px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+
+.empty{padding:30px;text-align:center;color:var(--ink-2);font-family:var(--mono)}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-top:34px}
+  .blister{max-width:340px}
+  .tarjas{grid-template-columns:1fr}
+  .check{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+  .autor-in{grid-template-columns:1fr;gap:18px}
+  .autor-marca{justify-self:start;margin-top:0}
+  .tarjas{grid-template-columns:1fr 1fr}
+  .cta-mid{grid-template-columns:1fr}
+  .filters{position:static}
+  .receita{padding:24px 20px}
+}
+@media (max-width:480px){.tarjas{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* impressão / PDF */
+@media print{
+  @page{size:A4;margin:12mm 11mm 14mm}
+  body{background:#fff;color:#131C26;padding:0;font-size:9.5pt}
+  .top,.filters,.fav,.roles,.no-print,.share,.rx-cta,.hero .ctas,.micro,.pill .hot{display:none!important}
+  section{padding-block:10px}
+  .hero{grid-template-columns:1fr 200px;padding-block:6px 10px;gap:20px}
+  .hero h1{font-size:44pt}
+  .autor{break-inside:avoid}
+  .autor h2{font-size:22pt}
+  .autor p{font-size:10pt}
+  .autor-marca{font-size:18pt}
+  .blister .num{display:none}
+  .hero p.lede{font-size:11pt;margin:10px 0}
+  .tarjas{grid-template-columns:repeat(4,1fr)}
+  .duo{grid-template-columns:1fr 1fr}
+  .receita{padding:16px 20px;border-radius:18px}
+  .cat{break-before:auto;padding-block:14px 0}
+  .cat-head{break-after:avoid;margin-bottom:8px}
+  .cat-num{font-size:36pt}
+  .cat-head h2{font-size:24pt}
+  .sec-head h2,.receita h2{font-size:26pt}
+  .tarja h3{font-size:15pt}
+  .box h3{font-size:18pt}
+  .pills{grid-template-columns:repeat(3,1fr);gap:8px}
+  .pill{padding:11px 12px;border-radius:16px;gap:5px}
+  .pill h3{font-size:10.5pt}
+  .pill .apelido{font-size:8pt}
+  .capsule{width:26px;height:11px}
+  .badge{font-size:6.5pt;padding:2px 7px}
+  .bula dd{font-size:8.5pt;margin:0}
+  .bula dd.warn{font-size:8pt}
+  .bula dt{font-size:6.5pt}
+  .pill .go{padding:0;background:none;font-size:7.5pt}
+  .pill .go::after{content:" " attr(href);font-family:var(--mono);font-weight:400;font-size:6pt;word-break:break-all;color:#4A5563}
+  .pill,.tarja,.check label,.nota,.box,.receita,.cta-mid{break-inside:avoid}
+  .check{grid-template-columns:1fr 1fr}
+  .final{padding-block:16px}
+  .final h2{font-size:32pt}
+  .final::after{content:"Newsletter (in Portuguese for now): vorallito.substack.com";display:block;font-family:var(--mono);font-size:10pt;margin-top:8px;color:#D0201A}
+  footer{display:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://vorallito.substack.com/" aria-label="Vorallito on Substack"><span class="cap" aria-hidden="true"></span>Vorallito</a>
+    <a class="btn" href="https://vorallito.substack.com/subscribe">Get notified</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="hero" aria-labelledby="h1">
+  <div>
+    <div class="eyebrow" id="eyebrow">Skills Pharmacy · links checked on Sep 25, 2026</div>
+    <h1 id="h1">Stop pasting the same context into Claude <em>every week.</em></h1>
+    <p class="lede">A skill is a short manual that Claude looks up on its own when it recognizes the task: reviewing a contract, closing a spreadsheet, preparing a meeting. You explain once and it follows. I checked the link, activity and documentation of each one and sorted them by area of work. Each pill says what it does, when to use it and how much care it needs.</p>
+    <div class="ctas">
+      <a class="btn" href="https://vorallito.substack.com/subscribe">Get notified</a>
+      <a class="btn ghost" href="#receita">Build my prescription</a>
+    </div>
+    <div class="micro">Free. The newsletter is in Portuguese for now; subscribe to hear when the English edition launches.</div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="blister" aria-hidden="true" id="blister"></div>
+</section>
+
+<section class="autor" aria-labelledby="h-autor">
+  <div class="autor-in">
+    <div class="autor-marca" aria-hidden="true">CHECKED<br><small>SEP 25, 2026</small></div>
+    <div>
+      <div class="eyebrow">Who checked</div>
+      <h2 id="h-autor">I use AI for work. That's why I check before I recommend.</h2>
+      <p>Every day I coordinate several Codex and Claude Code sessions on the same project, and each one needs to know what the others decided. I learned that the risk is not the AI making mistakes. It is the AI being wrong with confidence and nobody noticing.</p>
+      <p>So I follow one rule in everything I do: anything not checked gets the “not verified” stamp. I keep a shared log where each session reads the current state before it starts and writes down what it did before it leaves. A number without a source does not go in.</p>
+      <p class="autor-fecho">This pharmacy follows the same rule.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-tarja">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Before you open the box</div>
+      <h2 id="h-tarja">Read the label</h2>
+      <p>The rating is mine, based on fixed criteria. It measures relative risk. It is not a security audit.</p>
+    </div>
+  </div>
+  <div class="tarjas">
+    <div class="tarja"><div class="band" style="background:var(--t-livre)"></div><div class="in"><h3>Over the counter</h3><p>Published by Anthropic or by the company that owns the tool, and updated in the last month. Lowest relative risk. Read the SKILL.md anyway.</p></div></div>
+    <div class="tarja"><div class="band" style="background:var(--t-verm)"></div><div class="in"><h3>Prescription only</h3><p>Community project with more than a thousand stars, updated in the last six months. Test it on a real case, with no sensitive data, before bringing it to your team.</p></div></div>
+    <div class="tarja"><div class="band" style="background:var(--t-exp)"></div><div class="in"><h3>Experimental sample</h3><p>New, small, not actively maintained, or very specific. Use it as a reference. Keep it out of critical processes.</p></div></div>
+    <div class="tarja"><div class="band" style="background:var(--t-diy)"></div><div class="in"><h3>Compounded formula</h3><p>There is no ready-made version. I wrote the recipe, and you build the skill with Skill Creator the way you need it.</p></div></div>
+  </div>
+</section>
+
+<section id="receita" aria-labelledby="h-rx">
+  <div class="receita">
+    <div class="eyebrow">Your prescription in 30 seconds</div>
+    <h2 id="h-rx">What is your area?</h2>
+    <p>Pick one below and see the five pills I would install first if I were you.</p>
+    <div class="roles" id="roles" role="group" aria-label="Choose your area"></div>
+    <div class="rx" id="rx"></div>
+    <div class="share">
+      <button class="btn" id="copy-rx" type="button">Copy my prescription</button>
+      <a class="btn alt" id="wa-rx" href="#">Send on WhatsApp</a>
+      <small id="copy-msg" aria-live="polite"></small>
+    </div>
+    <div class="rx-cta">
+      <b id="rx-cta-t">Want the Management edition?</b>
+      <p style="margin:0 0 12px">Subscribe and reply to the welcome email with the name of your area. The area with the most votes among the first 100 subscribers gets an edition with skills tested on real tasks. The newsletter is in Portuguese for now.</p>
+      <a class="btn" id="rx-cta-b" href="https://vorallito.substack.com/subscribe">Vote for Management</a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-inst">
+  <div class="duo">
+    <div class="box">
+      <h3 id="h-inst">How to install in two minutes</h3>
+      <ol>
+        <li><b>Turn on the feature.</b> <span>In Settings › Capabilities, enable “Code execution and file creation”. On Team and Enterprise plans, an admin turns it on.</span></li>
+        <li><b>Word, Excel, PowerPoint and PDF come ready</b> <span>on claude.ai. No install needed.</span></li>
+        <li><b>Skills from the official directory:</b> <span>Customize › Skills › “+” › Browse skills.</span></li>
+        <li><b>Third-party skill:</b> <span>download the skill folder, zip it and upload it in Customize › Skills › “+” › Upload.</span></li>
+        <li><b>Official plugins</b> <span>(paid plans) appear in Customize › Plugins. They were built for Cowork and also run in Claude Code.</span></li>
+      </ol>
+      <div class="src">Checked in the Anthropic help center on Sep 25, 2026. Menus change. Some skills need a terminal; the card says so.</div>
+    </div>
+    <div class="box">
+      <h3>Your data, your responsibility</h3>
+      <ul>
+        <li><b>Company account for company data.</b> <span>Personal and business plans have different data-use rules.</span></li>
+        <li><b>Your data-protection law applies</b> <span>(GDPR in the EU, LGPD in Brazil, and similar laws elsewhere). Processing may happen outside your country. Health, religion, salary and performance-review data are sensitive or need extra care.</span></li>
+        <li><b>Ask where the data goes.</b> <span>Some skills send content to third-party services. The cards say when that happens.</span></li>
+        <li><b>Emails and PDFs can carry hidden instructions.</b> <span>With connectors on, review what Claude did before you approve anything it sends.</span></li>
+        <li><b>Legal and accounting playbooks in the official bundles follow US rules.</b> <span>Adapt them to your jurisdiction before use.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="filters" id="filters" role="search">
+  <input id="q" type="search" placeholder="Search: contract, spreadsheet, support, SEO…" aria-label="Search pills">
+  <button class="chip" id="f-livre" aria-pressed="false">Over the counter</button>
+  <button class="chip" id="f-alta" aria-pressed="false">Trending</button>
+  <button class="chip" id="f-fav" aria-pressed="false">★ Mine</button>
+  <span class="count" id="count" aria-live="polite"></span>
+</div>
+
+<div id="catalog"></div>
+
+<section aria-labelledby="h-check">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Contraindications</div>
+      <h2 id="h-check">Six questions before you install any skill</h2>
+      <p>A skill reads everything you let it read. Read the skill first. In a SkillSpector analysis of 31,132 public skills, 26.1% had some vulnerability.</p>
+    </div>
+  </div>
+  <ul class="check">
+    <li><label><input type="checkbox" id="ck1"><div><b>Who published it?</b><span>A known company or an author with a public track record. A profile created yesterday is a warning sign.</span></div></label></li>
+    <li><label><input type="checkbox" id="ck2"><div><b>Does the SKILL.md say when it kicks in?</b><span>The description must make clear which kind of request triggers the skill.</span></div></label></li>
+    <li><label><input type="checkbox" id="ck3"><div><b>Does it run scripts?</b><span>Open the folder and read what will be executed. If you don't understand it, don't install it.</span></div></label></li>
+    <li><label><input type="checkbox" id="ck4"><div><b>What access does it ask for, and where does your data go?</b><span>Grant the minimum. Keep client contracts and personal data out of the test.</span></div></label></li>
+    <li><label><input type="checkbox" id="ck5"><div><b>Was it updated recently?</b><span>A project idle for months tends to break when Claude or the tool changes.</span></div></label></li>
+    <li><label><input type="checkbox" id="ck6"><div><b>Does it solve something you do every week?</b><span>If the answer is no, you are just collecting.</span></div></label></li>
+  </ul>
+  <p style="color:var(--ink-2);font-size:15px;margin-top:14px">For an automated second opinion, run <a href="https://github.com/NVIDIA/SkillSpector">SkillSpector</a> on the skill folder before installing.</p>
+</section>
+
+<section class="final" aria-labelledby="h-final">
+  <div class="eyebrow">Next edition</div>
+  <h2 id="h-final">The first 100 subscribers pick the next edition.</h2>
+  <p>Subscribe for free and reply to the welcome email with your area. The one with the most votes gets an edition with skills tested on real tasks and step-by-step installation. Until then, subscribers get the revised list, with what came in and what went out. The newsletter and the PDF version are in Portuguese for now.</p>
+  <div class="share" style="margin-top:0">
+    <a class="btn" href="https://vorallito.substack.com/subscribe">Get notified and vote for my area</a>
+    <button class="btn alt" id="copy-page" type="button">Copy link for the team</button>
+    <small id="copy-page-msg" aria-live="polite"></small>
+  </div>
+  <div class="micro">You subscribe on Substack. This page does not ask for your email.</div>
+</section>
+
+<section aria-labelledby="h-nota">
+  <div class="nota">
+    <div class="eyebrow">How this pharmacy was put together</div>
+    <h2 id="h-nota" style="font-size:32px;margin-top:6px">Criteria, limits and transparency</h2>
+    <ul>
+      <li><b>What I checked.</b> On Sep 25, 2026, every link opened, every repository had its documentation read and its last-update date checked. Checking is not testing: I did not run any skill on a real task for this edition.</li>
+      <li><b>Who it is for.</b> About three in four pills serve people who work outside engineering. The tech and design ones are grouped together at the end.</li>
+      <li><b>What was left out.</b> Projects that were removed, archived or idle for months, and clones that inflate their own install count. When a project moved, the link points to the new address.</li>
+      <li><b>One pill, many skills.</b> Bundles and plugins group dozens of skills and count as one pill.</li>
+      <li><b>“Trending”</b> marks community projects with more than 40,000 GitHub stars on the check date. Popularity is not a guarantee of quality.</li>
+      <li><b>Gaps.</b> I found nothing reliable for procurement, the public sector, healthcare, non-software engineering, corporate training and personal life. For personal life, I left formulas so you can build your own.</li>
+      <li><b>Independence.</b> A Vorallito guide, with no ties to Anthropic or to the authors listed, and no sponsored links.</li>
+      <li><b>Privacy.</b> This page does not ask for your email. Favorite stars stay in your browser only.</li>
+      <li><b>Metaphor.</b> Pharmacy, leaflet and label are editorial devices. No pill here is a medicine or a clinical tool.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">Vorallito · Skills Pharmacy · issue 01 · September 2026 · vorallito.substack.com</div></footer>
+
+<script>
+const PAGE_URL = "https://vorallito.github.io/en/";
+const SUB_URL = "https://vorallito.substack.com/subscribe";
+const CATS = [
+ {id:"c1", cor:"--c1", nome:"Start here", sub:"Five pills to find, build and check the others. If you install only one group, install this one."},
+ {id:"c2", cor:"--c2", nome:"Productivity and routine", sub:"So Claude knows who is who, what is pending and where your notes are."},
+ {id:"c3", cor:"--c3", nome:"Writing and communication", sub:"Announcements the team reads to the end, documents that persuade and texts that sound like you."},
+ {id:"c4", cor:"--c4", nome:"Documents, spreadsheets and slides", sub:"Files ready to attach: Word, PDF, Excel, PowerPoint and diagrams someone else can edit."},
+ {id:"c5", cor:"--c5", nome:"Data and finance", sub:"Queries, dashboards, reconciliations and variance analyses you can audit."},
+ {id:"c6", cor:"--c6", nome:"Sales, support and marketing", sub:"From call prep to the answered ticket and the campaign report."},
+ {id:"c7", cor:"--c7", nome:"Product, operations and people", sub:"Specs, roadmaps, processes, hiring and performance reviews."},
+ {id:"c8", cor:"--c8", nome:"Legal and compliance", sub:"Triage of contracts, NDAs and privacy. Everything comes out as a draft for a lawyer to review."},
+ {id:"c9", cor:"--c9", nome:"Research and learning", sub:"Source sweeps, academic research, fact-checking and study of technical books."},
+ {id:"c10", cor:"--c10", nome:"Technology and design", sub:"For people who code, design screens or lead a technical team. Almost all need Claude Code."},
+ {id:"c11", cor:"--c7", nome:"Personal life and purpose", sub:"I found no mature skills here. So I wrote four formulas for you to build your own with Skill Creator."}
+];
+const G = "https://github.com/";
+const KWP = G+"anthropics/knowledge-work-plugins/tree/main/";
+const AS = G+"anthropics/skills/tree/main/skills/";
+// t: livre | verm | exp | diy · alta: community project with more than 40,000 stars on Sep 25, 2026 · w: caution
+const SKILLS = [
+ // c1
+ {c:"c1",nome:"Find Skills",t:"livre",tipo:"skill",o:"Describe the task and it searches the public skills.sh registry for ready-made skills, with the install command.",q:"Before building anything from scratch.",w:"Runs from the terminal (Claude Code).",u:G+"vercel-labs/skills/tree/main/skills/find-skills",r:["dev"]},
+ {c:"c1",nome:"Skill Creator",t:"livre",tipo:"skill",o:"Interviews you about one of your processes and turns the answers into a skill with a trigger, steps and examples.",q:"You repeated the same briefing for the third time this month.",u:AS+"skill-creator"},
+ {c:"c1",nome:"Discernment Nudge",t:"livre",tipo:"skill",o:"After advice, a draft or an analysis, Claude adds two or three questions about what you should check before acting.",q:"The answer will become a decision, a client email or a number in a report. It does not kick in for code or creative writing.",u:AS+"discernment-nudge"},
+ {c:"c1",nome:"Grill Me",t:"verm",alta:1,tipo:"skill",o:"Flips the script: Claude asks hard questions about your request before doing it.",q:"The request is vague, the deadline is short and a mistake is costly.",w:"It does not kick in on its own: call it with /grill-me. Also install the “grilling” skill from the same repository.",u:G+"mattpocock/skills/tree/main/skills/productivity/grill-me"},
+ {c:"c1",nome:"SkillSpector",t:"livre",tipo:"tool",o:"Scans a skill for hidden instructions, data sent out and suspicious dependencies.",q:"The skill came from an unknown author or asks for access to company systems.",w:"Needs Python or Docker. Ask your IT team for help.",u:G+"NVIDIA/SkillSpector"},
+ // c2
+ {c:"c2",nome:"Productivity",t:"livre",tipo:"official plugin",o:"A task list in a file, memory about your company's people, projects and acronyms, and a dashboard to track it all.",q:"You want Claude to know who is who and what is pending without having to explain.",w:"The full-update command sweeps email, calendar and chat. Use it with your company account.",u:KWP+"productivity"},
+ {c:"c2",nome:"Enterprise Search",t:"livre",tipo:"official plugin",o:"One question, one answer with sources: it searches connected email, chat, documents and wiki at the same time.",q:"You know the decision was made, but you don't remember where.",u:KWP+"enterprise-search"},
+ {c:"c2",nome:"Obsidian Skills",t:"livre",alta:1,tipo:"bundle",o:"Teaches Claude to read and write in your Obsidian vault: notes, links, bases and canvas. Published by the CEO of Obsidian.",q:"Your meeting and reading notes already live in Obsidian.",u:G+"kepano/obsidian-skills"},
+ {c:"c2",nome:"Claude Obsidian",t:"verm",tipo:"bundle",o:"Keeps a second brain that organizes itself, as a personal wiki.",q:"You pile up loose notes and never find anything later.",u:G+"AgriciDaniel/claude-obsidian"},
+ {c:"c2",nome:"Google Workspace CLI",t:"verm",tipo:"tool",o:"Command-line tool for Gmail, Calendar, Drive, Docs and Sheets, with skills for agents.",q:"You use Claude Code and want it to work in Workspace without copy and paste.",w:"Maintained on the Google Workspace GitHub, but the project itself says it is not an officially supported Google product.",u:G+"googleworkspace/cli"},
+ {c:"c2",nome:"Planning With Files",t:"verm",tipo:"skill",o:"Saves the plan, findings and progress to files, so long tasks pick up where they left off.",q:"The work spans days and the conversation loses the thread.",u:G+"OthmanAdi/planning-with-files"},
+ {c:"c2",nome:"Claude Mem",t:"verm",alta:1,tipo:"plugin",o:"Summarizes each session and brings back the essentials in the next one, so Claude remembers earlier decisions.",q:"You are tired of starting every conversation with a paragraph of context.",w:"Uses an external service with login and subscription that records what happens in the session. No client data.",u:G+"thedotmack/claude-mem"},
+ {c:"c2",nome:"I Have ADHD",t:"verm",alta:1,tipo:"skill",o:"Forces answers with the conclusion on top, in short blocks that are easy to scan.",q:"You read the answer between meetings, on your phone.",w:"It is a reading format, not a clinical tool.",u:G+"ayghri/i-have-adhd"},
+ {c:"c2",nome:"Caveman",t:"verm",alta:1,tipo:"skill",o:"Trims the fat from answers: less politeness, less repetition, more content per line.",q:"You want lean technical answers and to use less of your usage limit.",u:G+"JuliusBrussee/caveman"},
+ {c:"c2",nome:"n8n Skills",t:"verm",tipo:"bundle",o:"Teaches Claude to build n8n workflows that work on the first import.",q:"You automate tasks across systems with n8n.",u:G+"czlonkowski/n8n-skills"},
+ {c:"c2",nome:"Notion Skills",t:"exp",tipo:"bundle",o:"Skills published by Notion for agents to use Notion's command line and integrations.",q:"Your tech team builds automations on top of Notion.",w:"Aimed at developers and still with little adoption.",u:G+"makenotion/skills"},
+ // c3
+ {c:"c3",nome:"Internal Comms",t:"livre",tipo:"skill",o:"Ready formats for weekly status, change announcements, FAQs and incident reports.",q:"You need to tell a lot of people something and want them to read to the end.",u:AS+"internal-comms"},
+ {c:"c3",nome:"Doc Coauthoring",t:"livre",tipo:"skill",o:"Guides writing a document in stages: context, structure, draft and a test with an imaginary reader.",q:"A proposal, internal policy or decision document that needs to persuade.",u:AS+"doc-coauthoring"},
+ {c:"c3",nome:"Brand Guidelines",t:"livre",tipo:"skill",o:"Applies brand colors and typography to materials. Comes set up with the Anthropic brand, as an example.",q:"You want a template to build a skill for your own brand.",u:AS+"brand-guidelines"},
+ {c:"c3",nome:"Humanizer",t:"verm",alta:1,tipo:"skill",o:"Rewrites text to remove typical AI habits: empty punchlines, lists of three, generic conclusions.",q:"The text will go out under your name.",w:"Check your company's policy on disclosing AI use.",u:G+"blader/humanizer"},
+ {c:"c3",nome:"LinkedIn Agent Skill",t:"exp",tipo:"bundle",o:"Eleven skills for LinkedIn posts, comments and profile, with hook structures.",q:"You want a starting point for a content routine.",w:"Project created in September 2026.",u:G+"Jakeschincariol/linkedin-agent-skill"},
+ // c4
+ {c:"c4",nome:"DOCX",t:"livre",tipo:"skill",o:"Creates and edits Word files with styles, tables, comments and tracked changes.",q:"The deliverable has to be a .docx, not text in the chat.",w:"Already on by default in claude.ai.",u:AS+"docx"},
+ {c:"c4",nome:"PDF",t:"livre",tipo:"skill",o:"Extracts text and tables, fills in forms, merges, splits and creates PDFs.",q:"A batch of PDFs arrived and you need the data inside them.",w:"Already on by default in claude.ai.",u:AS+"pdf"},
+ {c:"c4",nome:"PDF Viewer",t:"livre",tipo:"official plugin",o:"Opens the PDF in a viewer where Claude suggests highlights and notes, fills in fields, stamps and places signatures.",q:"You review contracts and forms and want to see every mark before approving.",u:KWP+"pdf-viewer"},
+ {c:"c4",nome:"PPTX",t:"livre",tipo:"skill",o:"Builds and edits PowerPoint decks from content or from a company template.",q:"The meeting is tomorrow and the deck is still a text document.",w:"Already on by default in claude.ai.",u:AS+"pptx"},
+ {c:"c4",nome:"XLSX",t:"livre",tipo:"skill",o:"Creates spreadsheets with live formulas, formatting and charts, and cleans up messy data.",q:"You want formulas you can audit, not pasted values.",w:"Already on by default in claude.ai.",u:AS+"xlsx"},
+ {c:"c4",nome:"Diagram Design",t:"verm",alta:1,tipo:"skill",o:"Diagrams with an editorial finish to explain processes, structures and flows.",q:"One drawing will save ten paragraphs of explanation.",u:G+"cathrynlavery/diagram-design"},
+ {c:"c4",nome:"Draw.io Skill",t:"verm",tipo:"skill",o:"Describe the flow in plain words and get an editable draw.io diagram, including BPMN.",q:"Someone else will need to adjust the process map later.",w:"Needs draw.io installed on your computer.",u:G+"Agents365-ai/drawio-skill"},
+ {c:"c4",nome:"Frontend Slides",t:"verm",tipo:"skill",o:"HTML presentations that open in any browser and can be sent as a link.",q:"The deck will be shown on screen or sent by message.",w:"No updates since June.",u:G+"zarazhangrui/frontend-slides"},
+ // c5
+ {c:"c5",nome:"Data",t:"livre",tipo:"official plugin",o:"Explores datasets, writes SQL, builds charts and dashboards and validates the results before you present them.",q:"Someone asked for a number and you don't want to wait in the data team's queue.",u:KWP+"data"},
+ {c:"c5",nome:"Finance",t:"livre",tipo:"official plugin",o:"Support for the close: journal entries, reconciliations, financial statements and variance analysis.",q:"It is closing week and there is not enough time.",w:"Includes routines designed for US companies, such as SOX testing. Adapt them to your jurisdiction.",u:KWP+"finance"},
+ {c:"c5",nome:"Claude for Financial Advisors",t:"exp",tipo:"bundle",o:"Reference workflows for investment advisors who use data from connectors.",q:"You want to see how Anthropic designed this workflow.",w:"The repository itself says it is a reference with no active maintenance.",u:G+"anthropics/claude-for-financial-advisors"},
+ // c6
+ {c:"c6",nome:"Sales",t:"livre",tipo:"official plugin",o:"Daily briefing, call prep and summary, inbox triage and CRM logging.",q:"Your calendar has more client meetings than free hours.",u:KWP+"sales"},
+ {c:"c6",nome:"Customer Support",t:"livre",tipo:"official plugin",o:"Ticket triage, draft replies, escalation packages and knowledge-base articles.",q:"The support queue grows faster than the team.",u:KWP+"customer-support"},
+ {c:"c6",nome:"Marketing",t:"livre",tipo:"official plugin",o:"Content drafts, campaign plans, brand review, SEO audits and email sequences.",q:"The editorial calendar is behind and the team is small.",u:KWP+"marketing"},
+ {c:"c6",nome:"Marketing Skills",t:"verm",alta:1,tipo:"bundle",o:"Dozens of skills for conversion, copy, SEO, lifecycle, metrics and growth.",q:"You want a ready growth playbook to look things up in.",u:G+"coreyhaines31/marketingskills"},
+ {c:"c6",nome:"Claude SEO",t:"verm",tipo:"bundle",o:"Technical audit, content, structured data, local SEO and optimization for AI answers.",q:"Organic traffic dropped and nobody knows why.",u:G+"AgriciDaniel/claude-seo"},
+ {c:"c6",nome:"Claude Ads",t:"verm",tipo:"bundle",o:"Audits paid media accounts on Google, Meta, LinkedIn and other platforms.",q:"Cost per lead went up and you need a quick diagnosis.",w:"It can change campaigns if you give it permission. Start with read-only access.",u:G+"AgriciDaniel/claude-ads"},
+ // c7
+ {c:"c7",nome:"Product Management",t:"livre",tipo:"official plugin",o:"Specs, roadmap updates, stakeholder communication and user research synthesis.",q:"You spend more time documenting than deciding.",u:KWP+"product-management"},
+ {c:"c7",nome:"Operations",t:"livre",tipo:"official plugin",o:"Vendor evaluation, procedures, responsibility matrices, status reports and runbooks.",q:"The process exists only in one person's head.",u:KWP+"operations"},
+ {c:"c7",nome:"Human Resources",t:"livre",tipo:"official plugin",o:"Offer letters, onboarding, review cycles, compensation analysis and recruiting funnel.",q:"Back-to-back hires and HR is one person.",w:"Salary and performance reviews are personal data. Use only in a company account.",u:KWP+"human-resources"},
+ {c:"c7",nome:"Small Business",t:"livre",tipo:"official plugin",o:"Dozens of skills for people running a small business, and it asks for your approval before acting.",q:"You are the owner, finance, sales and HR at the same time.",w:"Payroll and taxes follow US rules; adapt them to your jurisdiction.",u:KWP+"small-business"},
+ {c:"c7",nome:"PM Skills",t:"verm",tipo:"bundle",o:"More than a hundred product skills, from discovery to growth.",q:"You want a framework at hand for each stage of the product cycle.",u:G+"phuryn/pm-skills"},
+ {c:"c7",nome:"Product Manager Skills",t:"verm",tipo:"bundle",o:"Classic product frameworks turned into skills: prioritization, interviews, metrics.",q:"You prefer proven methods over this week's novelty.",u:G+"deanpeters/Product-Manager-Skills"},
+ {c:"c7",nome:"Claude Skills (alirezarezvani)",t:"verm",tipo:"bundle",o:"Hundreds of skills for marketing, product, compliance, finance and leadership, with uneven quality.",q:"You want to dig for ideas by area. Pick a few and test them.",u:G+"alirezarezvani/claude-skills"},
+ // c8
+ {c:"c8",nome:"Legal",t:"livre",tipo:"official plugin",o:"Contract review based on your playbook, NDA triage, privacy and risk assessment.",q:"In-house legal gets more contracts than it can read.",w:"The playbooks start from US positions and do not cover other data-protection laws. Adapt them to your jurisdiction and swap in your own.",u:KWP+"legal"},
+ {c:"c8",nome:"Claude for Legal",t:"livre",tipo:"bundle",o:"Plugins by area of law, agents for data-subject requests and vendor review, and connectors to legal tools.",q:"You want a complete legal workflow, with human review at the end.",w:"Deadlines and rules follow US law; adapt them to your jurisdiction. Under Brazil's LGPD, for example, the deadline for a full response to a data subject is 15 days.",u:G+"anthropics/claude-for-legal"},
+ {c:"c8",nome:"Claude Legal Skill",t:"exp",tipo:"skill",o:"Contract review based on a public clause taxonomy, with marked-up suggestions.",q:"Studying and comparing approaches. It does not replace a lawyer.",u:G+"evolsb/claude-legal-skill"},
+ // c9
+ {c:"c9",nome:"Last30Days",t:"verm",alta:1,tipo:"skill",o:"Gathers what was said about a topic in the last month across social networks, forums, videos and websites.",q:"You need to know what the market is saying before the meeting.",w:"Collects social media content and may use a paid third-party service.",u:G+"mvanhorn/last30days-skill/tree/main/skills/last30days"},
+ {c:"c9",nome:"Firecrawl",t:"livre",tipo:"skill",o:"Searches and extracts content from websites, including pages that require navigation.",q:"The information is scattered across dozens of pages.",w:"Searches go through the Firecrawl service, with its own account.",u:G+"firecrawl/cli/tree/main/skills/firecrawl-agent"},
+ {c:"c9",nome:"Deep Research Skills",t:"verm",tipo:"bundle",o:"Deep research in stages, with checkpoints for you to confirm the direction.",q:"The topic is complex and you want to steer the investigation.",u:G+"Weizhena/Deep-Research-skills"},
+ {c:"c9",nome:"Academic Research Skills",t:"verm",alta:1,tipo:"bundle",o:"Full academic workflow: literature search, writing, simulated peer review and final version.",q:"A paper, thesis or technical report with references.",u:G+"Imbad0202/academic-research-skills"},
+ {c:"c9",nome:"Scientific Agent Skills",t:"verm",alta:1,tipo:"bundle",o:"More than a hundred scientific skills connected to public databases.",q:"You work in biology, chemistry or scientific data research.",w:"Not for clinical decisions.",u:G+"K-Dense-AI/scientific-agent-skills"},
+ {c:"c9",nome:"Book to Skill",t:"verm",tipo:"skill",o:"Turns the PDF of a technical book into a skill for lookup and study.",q:"You want Claude to answer based on that specific book.",w:"Use only with books you have the right to use.",u:G+"virgiliojr94/book-to-skill"},
+ {c:"c9",nome:"Printing Press",t:"verm",tipo:"skill",o:"Turns a website or API into a command-line tool that is easy for agents to use.",q:"The system you check every day has no ready integration.",u:G+"mvanhorn/cli-printing-press/tree/main/skills/printing-press"},
+ {c:"c9",nome:"Journalism Skills",t:"exp",tipo:"bundle",o:"Fact-checking, data journalism and public records requests to government bodies.",q:"The information needs to survive a public fact-check.",w:"The request templates follow US public records law; adapt them to your jurisdiction. In Brazil, the reference is the LAI.",u:G+"jamditis/claude-skills-journalism"},
+ // c10
+ {c:"c10",nome:"Superpowers",t:"verm",alta:1,tipo:"bundle",o:"A complete engineering process: ideation, spec, plan, tests first, subagents and review.",q:"Claude starts coding before it understands the request.",u:G+"obra/superpowers"},
+ {c:"c10",nome:"Karpathy Guidelines",t:"verm",alta:1,tipo:"rules guide",o:"A rules file that asks for simplicity, minimal changes and verification before finishing.",q:"Claude rewrites more than you asked for.",w:"No updates since April. Since it is a rules file, it ages slowly.",u:G+"multica-ai/andrej-karpathy-skills"},
+ {c:"c10",nome:"OpenSpec",t:"verm",alta:1,tipo:"tool",o:"Every change starts as a written proposal, gets applied and is then archived with history.",q:"Several people and agents work on the same code.",u:G+"Fission-AI/OpenSpec"},
+ {c:"c10",nome:"GSD Core",t:"verm",tipo:"bundle",o:"Commands to plan, discuss requirements and run large projects in phases. The official continuation of Get Shit Done.",q:"The project is too big for a single conversation.",u:G+"open-gsd/gsd-core"},
+ {c:"c10",nome:"Improve Codebase Architecture",t:"verm",alta:1,tipo:"skill",o:"Points out where the code is too tightly coupled and proposes refactors in safe steps.",q:"Every small change breaks something somewhere else.",u:G+"mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture"},
+ {c:"c10",nome:"MCP Builder",t:"livre",tipo:"skill",o:"Guides you through building an MCP server, the bridge that connects Claude to an internal system.",q:"Claude needs to talk to the company's ERP, CRM or database.",u:AS+"mcp-builder"},
+ {c:"c10",nome:"Claude API",t:"livre",tipo:"skill",o:"Up-to-date reference on models, pricing, tools and caching for people who build Claude into products.",q:"You are building something on the API.",u:AS+"claude-api"},
+ {c:"c10",nome:"Webapp Testing",t:"livre",tipo:"skill",o:"Opens your app in a controlled browser, clicks, fills in and checks that everything works.",q:"Before telling the client it is ready.",u:AS+"webapp-testing"},
+ {c:"c10",nome:"Trail of Bits Skills",t:"livre",tipo:"bundle",o:"Security analysis with CodeQL and Semgrep, published by the security firm itself.",q:"The code is going to production and handles client data.",u:G+"trailofbits/skills"},
+ {c:"c10",nome:"Playwright Skill",t:"verm",tipo:"skill",o:"Exploratory testing with Playwright in a lighter setup than an MCP server.",q:"You want browser automation without installing much.",u:G+"lackeyjb/playwright-skill"},
+ {c:"c10",nome:"Jeffallan Claude Skills",t:"verm",tipo:"bundle",o:"Skills and commands for full-stack development with agents.",q:"You want a broad kit to start with and prune later.",u:G+"Jeffallan/claude-skills"},
+ {c:"c10",nome:"Frontend Design",t:"livre",tipo:"skill",o:"Sets typography, color and layout before coding, so the screen does not look like a template.",q:"The screen will be seen by a client or investor.",u:AS+"frontend-design"},
+ {c:"c10",nome:"Web Artifacts Builder",t:"livre",tipo:"skill",o:"Builds small apps and interactive pages that run inside Claude.",q:"You want a calculator, dashboard or prototype to show today.",u:AS+"web-artifacts-builder"},
+ {c:"c10",nome:"Theme Factory",t:"livre",tipo:"skill",o:"Applies ready-made or generated visual themes to slides, documents and pages.",q:"You want visual consistency without opening a design tool.",u:AS+"theme-factory"},
+ {c:"c10",nome:"Canvas Design",t:"livre",tipo:"skill",o:"Static visual pieces, such as posters and artwork, in PNG or PDF.",q:"You need quick artwork for an event or a post.",u:AS+"canvas-design"},
+ {c:"c10",nome:"React Best Practices",t:"livre",tipo:"skill",o:"Performance and structure rules for React and Next.js, published by Vercel.",q:"The app got slow or hard to maintain.",u:G+"vercel-labs/agent-skills/tree/main/skills/react-best-practices"},
+ {c:"c10",nome:"Web Design Guidelines",t:"livre",tipo:"skill",o:"Reviews screens against accessibility and usability rules and lists what to fix.",q:"Before publishing a page to the public.",u:G+"vercel-labs/agent-skills/tree/main/skills/web-design-guidelines"},
+ {c:"c10",nome:"Remotion Best Practices",t:"livre",tipo:"skill",o:"Videos generated by code with React, published by the Remotion team.",q:"You produce series of videos in the same format.",u:G+"remotion-dev/skills/tree/main/skills/remotion-best-practices"},
+ {c:"c10",nome:"UI UX Pro Max",t:"verm",alta:1,tipo:"skill",o:"A library of styles, palettes, font pairings and interface rules to consult while you design.",q:"You need to decide on color and typography without a designer around.",u:G+"nextlevelbuilder/ui-ux-pro-max-skill"},
+ {c:"c10",nome:"Impeccable",t:"verm",alta:1,tipo:"bundle",o:"Commands for visual polish and audits of interfaces and dashboards.",q:"The screen works, but it still looks like a draft.",u:G+"pbakaus/impeccable"},
+ // c11 formulas
+ {c:"c11",nome:"Weekly review",t:"diy",tipo:"formula",o:"Every Friday, Claude asks what moved forward, what got stuck and what the three priorities for next week are.",q:"Paste into Skill Creator: “Create a weekly review skill that asks me 5 questions, sums up in 10 lines and suggests 3 priorities.”",u:AS+"skill-creator"},
+ {c:"c11",nome:"Intention journal",t:"diy",tipo:"formula",o:"A short morning or evening check-in: gratitude, intention for the day and one reflection question. Works for any tradition, or none.",q:"Paste into Skill Creator: “Create a journal skill that asks 3 reflection questions, without giving advice or interpreting my answers.”",w:"Faith and health are sensitive data. Use your personal account and do not keep this in a company account.",u:AS+"skill-creator"},
+ {c:"c11",nome:"Household budget",t:"diy",tipo:"formula",o:"You paste the month's transactions, Claude sorts them into your categories and compares them with the previous month in a spreadsheet.",q:"Paste into Skill Creator: “Create a skill that categorizes my spending with these categories and generates an XLSX comparing months.”",w:"Delete account and card numbers before pasting. It does not replace a financial planner.",u:AS+"skill-creator"},
+ {c:"c11",nome:"Study plan",t:"diy",tipo:"formula",o:"Turns a book or course into a schedule with spaced reviews and recall questions.",q:"Paste into Skill Creator: “Create a skill that builds a 4-week plan for this book, with 5 questions per chapter.”",u:AS+"skill-creator"}
+];
+const ROLES = [
+ {k:"ger",nome:"Management",rx:["Productivity","Enterprise Search","Discernment Nudge","Internal Comms","PPTX"]},
+ {k:"mkt",nome:"Marketing",rx:["Marketing","Marketing Skills","Claude SEO","Humanizer","Last30Days"]},
+ {k:"ven",nome:"Sales and support",rx:["Sales","Customer Support","Enterprise Search","Discernment Nudge","Internal Comms"]},
+ {k:"jur",nome:"Legal",rx:["Legal","PDF Viewer","DOCX","Doc Coauthoring","Discernment Nudge"]},
+ {k:"fin",nome:"Finance and data",rx:["Finance","Data","XLSX","PDF","Discernment Nudge"]},
+ {k:"prod",nome:"Product",rx:["Product Management","Grill Me","PM Skills","Doc Coauthoring","Diagram Design"]},
+ {k:"ops",nome:"HR and operations",rx:["Human Resources","Operations","Draw.io Skill","Internal Comms","Enterprise Search"]},
+ {k:"pes",nome:"Research and content",rx:["Deep Research Skills","Last30Days","Obsidian Skills","Humanizer","Book to Skill"]},
+ {k:"dev",nome:"Technology",rx:["Superpowers","Grill Me","SkillSpector","MCP Builder","Webapp Testing"]}
+];
+const PT = {"Find Skills": "skill finder", "Skill Creator": "skill builder", "Discernment Nudge": "check-before-you-act reminder", "Grill Me": "questions before starting", "SkillSpector": "skill inspector", "Productivity": "work memory and tasks", "Enterprise Search": "search across all your tools", "Obsidian Skills": "Claude in your Obsidian", "Claude Obsidian": "automatic second brain", "Google Workspace CLI": "Gmail, Calendar and Drive from the terminal", "Planning With Files": "plan saved to a file", "Claude Mem": "memory across conversations", "I Have ADHD": "straight-to-the-point answers", "Caveman": "lean answers", "n8n Skills": "n8n automations", "Notion Skills": "Notion integrations", "Internal Comms": "internal announcements", "Doc Coauthoring": "document co-author", "Brand Guidelines": "brand guide", "Humanizer": "removes the AI feel from text", "LinkedIn Agent Skill": "LinkedIn content", "DOCX": "Word documents", "PDF": "reading and building PDFs", "PDF Viewer": "mark up and sign PDFs", "PPTX": "PowerPoint decks", "XLSX": "Excel spreadsheets", "Diagram Design": "explainer diagrams", "Draw.io Skill": "editable flowcharts", "Frontend Slides": "slides in the browser", "Data": "data analysis", "Finance": "accounting close", "Claude for Financial Advisors": "investment advisory", "Sales": "sales assistant", "Customer Support": "customer support", "Marketing": "marketing assistant", "Marketing Skills": "growth playbook", "Claude SEO": "SEO audit", "Claude Ads": "paid media audit", "Product Management": "product management", "Operations": "processes and operations", "Human Resources": "human resources", "Small Business": "small business kit", "PM Skills": "product toolbox", "Product Manager Skills": "classic product methods", "Claude Skills (alirezarezvani)": "multi-area collection", "Legal": "legal assistant", "Claude for Legal": "legal suite", "Claude Legal Skill": "contract reviewer", "Last30Days": "what people said last month", "Firecrawl": "web content collection", "Deep Research Skills": "deep research", "Academic Research Skills": "academic research", "Scientific Agent Skills": "scientific research", "Book to Skill": "book becomes a reference", "Printing Press": "website becomes a tool", "Journalism Skills": "journalistic fact-checking", "Superpowers": "complete engineering method", "Karpathy Guidelines": "simplicity rules", "OpenSpec": "every change starts as a proposal", "GSD Core": "large projects in phases", "Improve Codebase Architecture": "guided refactoring", "MCP Builder": "connector to internal systems", "Claude API": "API integration", "Webapp Testing": "website testing in the browser", "Trail of Bits Skills": "security analysis", "Playwright Skill": "browser automation", "Jeffallan Claude Skills": "full-stack kit", "Frontend Design": "interface design", "Web Artifacts Builder": "mini-apps inside Claude", "Theme Factory": "visual themes", "Canvas Design": "artwork and posters", "React Best Practices": "React best practices", "Web Design Guidelines": "usability review", "Remotion Best Practices": "video made with code", "UI UX Pro Max": "interface advisor", "Impeccable": "visual polish"};
+const TARJA = {livre:"Over the counter",verm:"Prescription only",exp:"Experimental sample",diy:"Compounded formula"};
+SKILLS.forEach((s,i)=>{s.n=String(i+1).padStart(2,"0"); s.id="p"+s.n;});
+const byName = Object.fromEntries(SKILLS.map(s=>[s.nome,s]));
+
+const store = {
+  get(){try{return JSON.parse(localStorage.getItem("vorallito-favs")||"[]")}catch(e){return []}},
+  set(v){try{localStorage.setItem("vorallito-favs",JSON.stringify(v))}catch(e){}}
+};
+let favs = new Set(store.get());
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const real = SKILLS.filter(s=>s.t!=="diy");
+const nCat = CATS.length;
+
+document.getElementById("eyebrow").textContent = `Skills Pharmacy · ${real.length} pills · links checked on Sep 25, 2026`;
+document.getElementById("stats").innerHTML =
+  `<span class="stat"><b>${real.length}</b> pills</span><span class="stat"><b>${nCat}</b> areas</span><span class="stat"><b>${real.filter(s=>s.t==="livre").length}</b> over the counter</span><span class="stat"><b>${SKILLS.length-real.length}</b> formulas for personal life</span><span class="stat"><b>0</b> sponsored links</span>`;
+document.getElementById("blister").innerHTML =
+  CATS.slice(0,9).map(c=>`<div class="slot"><i style="background:linear-gradient(90deg,var(${c.cor}) 50%,color-mix(in srgb,var(${c.cor}) 30%,var(--card)) 50%)"></i></div>`).join("") +
+  `<div class="num"><span><b>${real.length}</b>pills</span><span><b>${nCat}</b>areas</span><span><b>4</b>labels</span></div>`;
+
+function card(s,cor){
+  const fav = favs.has(s.id), diy = s.t==="diy";
+  return `<article class="pill" id="${s.id}" style="--cc:var(${cor})" data-t="${s.t}" data-alta="${s.alta?1:0}" data-q="${esc((s.nome+" "+(PT[s.nome]||"")+" "+s.o+" "+s.q+" "+s.tipo+" "+(s.w||"")).toLowerCase())}">
+    ${s.alta?'<span class="hot">trending</span>':""}
+    <div class="pill-top"><span class="capsule" aria-hidden="true"></span><span class="n">${s.n}</span><div class="nm"><h3>${esc(s.nome)}</h3>${PT[s.nome]?`<span class="apelido">${esc(PT[s.nome])}</span>`:""}</div>
+      <button class="fav" type="button" aria-pressed="${fav}" aria-label="Save ${esc(s.nome)} to Mine" data-id="${s.id}">${fav?"★":"☆"}</button></div>
+    <span class="badge ${s.t}">${TARJA[s.t]} · ${s.tipo}</span>
+    <dl class="bula"><dt>${diy?"What it does":"Indication"}</dt><dd>${esc(s.o)}</dd><dt>${diy?"How to build it":"Use when"}</dt><dd>${esc(s.q)}</dd>${s.w?`<dt class="warn">Caution</dt><dd class="warn">${esc(s.w)}</dd>`:""}</dl>
+    <a class="go" href="${s.u}">${diy?"Open Skill Creator":"View documentation"} ↗</a>
+  </article>`;
+}
+function midCta(){
+  return `<aside class="cta-mid no-print"><div><h3>This list has an expiry date.</h3><p>In the September check, I found removed skills, archived projects and one that moved to a new address. Subscribers get the revised list with each edition, with what came in and what went out. The newsletter is in Portuguese for now.</p></div><a class="btn" href="${SUB_URL}">Get notified</a></aside>`;
+}
+document.getElementById("catalog").innerHTML = CATS.map((c,i)=>{
+  const items = SKILLS.filter(s=>s.c===c.id);
+  return `<section class="cat" id="${c.id}" aria-labelledby="h-${c.id}" style="--cc:var(${c.cor})">
+    <div class="cat-head"><span class="cat-num">${String(i+1).padStart(2,"0")}</span><h2 id="h-${c.id}">${c.nome}</h2><p>${c.sub} <span style="font-family:var(--mono);font-size:12px">· ${items.length} ${c.id==="c11"?"formulas":"pills"}</span></p></div>
+    <div class="pills">${items.map(s=>card(s,c.cor)).join("")}</div>
+  </section>` + (i===3 ? midCta() : "");
+}).join("") + `<p class="empty" id="empty" hidden>No pills match these filters. Clear the search or turn off a filter.</p>`;
+
+// prescription by area
+const rolesEl = document.getElementById("roles"), rxEl = document.getElementById("rx");
+let curRole = "ger";
+rolesEl.innerHTML = ROLES.map(r=>`<button class="chip" type="button" aria-pressed="false" data-k="${r.k}">${r.nome}</button>`).join("");
+function rxText(r){
+  return `My Claude skills prescription for ${r.nome}: ${r.rx.map(n=>`${n} (${PT[n]})`).join(", ")}. Build yours at the Vorallito Skills Pharmacy: ${PAGE_URL}`;
+}
+function showRx(k){
+  const r = ROLES.find(x=>x.k===k) || ROLES[0]; curRole = r.k;
+  rxEl.innerHTML = r.rx.map(n=>byName[n]).map(s=>`<a href="#${s.id}"><span>${s.n}</span><b>${esc(s.nome)}<em>${esc(PT[s.nome]||"")}</em></b></a>`).join("");
+  rolesEl.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed", b.dataset.k===r.k));
+  document.getElementById("rx-cta-t").textContent = `Want the ${r.nome} edition?`;
+  document.getElementById("rx-cta-b").textContent = `Vote for ${r.nome}`;
+  document.getElementById("wa-rx").href = "https://wa.me/?text="+encodeURIComponent(rxText(r));
+  document.getElementById("copy-msg").textContent = "";
+}
+rolesEl.addEventListener("click",e=>{const b=e.target.closest(".chip"); if(b) showRx(b.dataset.k);});
+const h = (location.hash||"").replace("#","");
+showRx(h.startsWith("area-") ? h.slice(5) : "ger");
+
+async function copy(text,msgEl){
+  try{ await navigator.clipboard.writeText(text); msgEl.textContent = "Copied. Paste it anywhere."; }
+  catch(e){ msgEl.textContent = text; }
+}
+document.getElementById("copy-rx").addEventListener("click",()=>copy(rxText(ROLES.find(x=>x.k===curRole)),document.getElementById("copy-msg")));
+document.getElementById("copy-page").addEventListener("click",()=>copy(`Guide to Claude skills by area of work, with a risk label: ${PAGE_URL}`,document.getElementById("copy-page-msg")));
+
+// filters
+const q = document.getElementById("q"), fL = document.getElementById("f-livre"), fA = document.getElementById("f-alta"), fF = document.getElementById("f-fav");
+const on = b => b.getAttribute("aria-pressed")==="true";
+[fL,fA,fF].forEach(b=>b.addEventListener("click",()=>{b.setAttribute("aria-pressed", !on(b)); apply();}));
+q.addEventListener("input",apply);
+function apply(){
+  const term = q.value.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll(".pill").forEach(p=>{
+    const ok = (!term || p.dataset.q.includes(term)) && (!on(fL) || p.dataset.t==="livre") && (!on(fA) || p.dataset.alta==="1") && (!on(fF) || favs.has(p.id));
+    p.hidden = !ok; if(ok) shown++;
+  });
+  document.querySelectorAll(".cat").forEach(c=>{c.hidden = !c.querySelector(".pill:not([hidden])");});
+  document.getElementById("empty").hidden = shown>0;
+  document.getElementById("count").textContent = shown===SKILLS.length ? `${SKILLS.length} items` : `${shown} of ${SKILLS.length}`;
+}
+document.getElementById("catalog").addEventListener("click",e=>{
+  const b = e.target.closest(".fav"); if(!b) return;
+  const id = b.dataset.id;
+  favs.has(id) ? favs.delete(id) : favs.add(id);
+  store.set([...favs]);
+  b.setAttribute("aria-pressed", favs.has(id)); b.textContent = favs.has(id) ? "★" : "☆";
+  if(on(fF)) apply();
+});
+apply();
+</script>
+
+</body></html>
