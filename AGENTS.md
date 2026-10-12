@@ -17,6 +17,7 @@ Mais de um agente publica aqui (Claude Code e ChatGPT/Codex). Siga estas regras 
 | `index.html`, `en/`, `img/`, `capa.png`, `Farmacia_de_Skills_Vorallito.pdf`, `revisao-semanal.zip` | Farmácia de Skills (Claude Code) | `python3 build.py --site --en` na pasta `vorallito_handoff/`. Não edite à mão. |
 | `chatgpt/` | Farmácia do ChatGPT | derivada da adaptação GPT-6; preserve como página própria |
 | `chatgpt-gpt6/` | Guia GPT-6 (ChatGPT/Codex) | pelo próprio projeto |
+| `rea/` | Ferramenta interativa sobre REA e direitos autorais (Claude Code) | fonte em `vorallito_handoff/rea/index.html`; copie para cá. Não edite à mão. |
 | `AGENTS.md`, `CLAUDE.md`, `.nojekyll`, `.gitignore` | regras do repositório | à mão, com cuidado |
 
 5. Projeto novo: crie uma pasta nova e acrescente uma linha na tabela acima no mesmo commit.

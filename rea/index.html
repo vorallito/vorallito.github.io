@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Posso usar este material? Ferramenta de REA e direitos autorais · Vorallito</title>
+<meta name="description" content="Ferramenta educacional: descubra o que você pode fazer com um material sob licença Creative Commons ou com todos os direitos reservados, no Brasil. Informativa, não é aconselhamento jurídico.">
+<style>
+:root{--bg:#faf6f0;--fg:#1c1917;--mut:#6b6259;--line:#e4dccf;--red:#d0201a;--card:#fff;--soft:#f1eadf;--ok:#1f7a45;--okb:#e3f3e9;--cond:#8a5a00;--condb:#fdf0d5;--no:#a3201a;--nob:#fbe3e1;--auth:#4b3f8f;--authb:#e8e5f6}
+@media (prefers-color-scheme:dark){:root{--bg:#141110;--fg:#efe7dc;--mut:#a89c8d;--line:#2d2723;--card:#1b1715;--soft:#211c19;--okb:#15301f;--condb:#33270b;--nob:#3a1816;--authb:#241f40;--ok:#6fd49a;--cond:#f0c870;--no:#ff8f86;--auth:#b3a8f2}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:820px;margin:0 auto;padding:22px 18px 70px}
+header .k{font:600 12px system-ui,sans-serif;letter-spacing:.08em;color:var(--red);text-transform:uppercase}
+h1{font-size:32px;line-height:1.15;margin:.2em 0 .25em}.lede{color:var(--mut);font-size:18px;margin:0 0 14px}
+.aviso{font:14px/1.5 system-ui,sans-serif;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--red);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0 18px}
+[role=tablist]{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+[role=tab]{font:600 14px system-ui,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:9px 14px;border-radius:999px;cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--red);border-color:var(--red);color:#fff}
+.painel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+label,.lab{display:block;font:600 14px system-ui,sans-serif;margin:12px 0 5px}
+select,input[type=text]{width:100%;font:16px system-ui,sans-serif;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.row{grid-template-columns:1fr}}
+.res{margin-top:18px;border-radius:10px;padding:16px;border:1px solid var(--line)}
+.res.ok{background:var(--okb);border-color:var(--ok)}.res.cond{background:var(--condb);border-color:var(--cond)}.res.no{background:var(--nob);border-color:var(--no)}.res.auth{background:var(--authb);border-color:var(--auth)}
+.badge{font:700 13px system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.res.ok .badge{color:var(--ok)}.res.cond .badge{color:var(--cond)}.res.no .badge{color:var(--no)}.res.auth .badge{color:var(--auth)}
+.res h2{font-size:22px;margin:.2em 0 .4em}.res h3{font:700 14px system-ui,sans-serif;margin:14px 0 4px}
+.res ul{margin:.2em 0;padding-left:1.2em}.res li{margin:.2em 0}
+.rea{font:14px/1.5 system-ui,sans-serif;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
+.base{font:13px/1.5 system-ui,sans-serif;color:var(--mut);margin-top:10px}.base a{color:inherit}
+.btn{font:600 15px system-ui,sans-serif;background:var(--red);color:#fff;border:0;padding:10px 18px;border-radius:8px;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--fg);border:1px solid var(--line)}
+.q{margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:10px}.q p{margin:0 0 8px;font-weight:600}
+.q button.op{display:block;width:100%;text-align:left;font:15px system-ui,sans-serif;border:1px solid var(--line);background:var(--bg);color:var(--fg);padding:9px 12px;border-radius:8px;margin:6px 0;cursor:pointer}
+.q button.op:disabled{cursor:default}.q button.certa{border-color:var(--ok);background:var(--okb)}.q button.errada{border-color:var(--no);background:var(--nob)}
+.exp{font:14px/1.5 system-ui,sans-serif;margin-top:8px;color:var(--mut)}
+.out{font:15px/1.55 system-ui,sans-serif;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px;white-space:pre-wrap;word-break:break-word}
+.chk{display:flex;gap:8px;align-items:flex-start;font:15px system-ui,sans-serif;margin:6px 0}.chk input{margin-top:4px}
+footer{font:13px/1.55 system-ui,sans-serif;color:var(--mut);margin-top:26px;border-top:1px solid var(--line);padding-top:14px}footer a{color:inherit}
+.score{font:700 20px system-ui,sans-serif;margin:8px 0}
+</style></head>
+<body><div class="wrap">
+<header><div class="k">Vorallito · Farmácia de Skills · educação aberta</div>
+<h1>Posso usar este material?</h1>
+<p class="lede">Escolha a licença e o que você quer fazer. A ferramenta explica o que a licença e a lei brasileira permitem, o que exigem e como dar o crédito.</p></header>
+<div class="aviso"><strong>Leia antes.</strong> Esta ferramenta é <strong>educacional e informativa</strong>. Não é aconselhamento jurídico e não substitui um advogado. As regras vêm das páginas da Creative Commons e do texto original da Lei 9.610/1998; podem ter mudado. Tudo roda no seu navegador: <strong>nada do que você escolhe é enviado a lugar nenhum</strong>.</div>
+
+<div role="tablist" aria-label="Seções">
+<button role="tab" id="t0" aria-selected="true" aria-controls="p0">Posso usar?</button>
+<button role="tab" id="t1" aria-selected="false" aria-controls="p1">Quiz (9 perguntas)</button>
+<button role="tab" id="t2" aria-selected="false" aria-controls="p2">Montar o crédito</button>
+<button role="tab" id="t3" aria-selected="false" aria-controls="p3">Declarar uso de IA</button>
+</div>
+
+<section class="painel" id="p0" role="tabpanel" aria-labelledby="t0">
+<div class="row"><div><label for="lic">Qual é a licença do material?</label>
+<select id="lic">
+<option value="BY">CC BY (atribuição)</option>
+<option value="BYSA">CC BY-SA (atribuição + compartilhar igual)</option>
+<option value="BYNC">CC BY-NC (atribuição + não comercial)</option>
+<option value="BYNCSA">CC BY-NC-SA (não comercial + compartilhar igual)</option>
+<option value="BYND">CC BY-ND (atribuição + sem derivações)</option>
+<option value="BYNCND">CC BY-NC-ND (não comercial + sem derivações)</option>
+<option value="CC0">CC0 / domínio público</option>
+<option value="ARR" selected>Todos os direitos reservados (©)</option>
+<option value="UNK">Não sei / não tem aviso nenhum</option>
+</select></div>
+<div><label for="acao">O que você quer fazer?</label>
+<select id="acao">
+<option value="aula">Usar em aula, sem fazer cópia</option>
+<option value="copiar">Copiar e compartilhar sem mudar nada</option>
+<option value="publicar">Publicar na internet</option>
+<option value="adaptar">Traduzir, editar ou adaptar</option>
+<option value="remix">Misturar com outro material</option>
+<option value="comercial">Usar em curso pago ou produto vendido</option>
+<option value="ia">Mandar a uma IA para resumir ou adaptar</option>
+</select></div></div>
+<div id="resultado" aria-live="polite"></div>
+</section>
+
+<section class="painel" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+<p style="margin-top:0">Nove perguntas. Cada resposta traz a fonte. Seu placar fica só aqui na tela.</p>
+<div id="quiz"></div><div class="score" id="placar"></div>
+<button class="btn sec" id="refazer" style="display:none">Refazer o quiz</button>
+</section>
+
+<section class="painel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+<p style="margin-top:0">A Creative Commons recomenda quatro elementos no crédito: <strong>T</strong>ítulo, <strong>A</strong>utor, <strong>F</strong>onte (o endereço) e <strong>L</strong>icença. Preencha e copie.</p>
+<div class="row"><div><label for="a_t">Título da obra</label><input type="text" id="a_t" placeholder="como aparece no original"></div>
+<div><label for="a_a">Autor</label><input type="text" id="a_a" placeholder="nome ou pseudônimo pedido pelo autor"></div></div>
+<div class="row"><div><label for="a_u">Endereço do original</label><input type="text" id="a_u" placeholder="https://..."></div>
+<div><label for="a_l">Licença</label><select id="a_l">
+<option value="by|CC BY 4.0|https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</option>
+<option value="by-sa|CC BY-SA 4.0|https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</option>
+<option value="by-nc|CC BY-NC 4.0|https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</option>
+<option value="by-nc-sa|CC BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</option>
+<option value="by-nd|CC BY-ND 4.0|https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</option>
+<option value="by-nc-nd|CC BY-NC-ND 4.0|https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</option>
+<option value="cc0|CC0 1.0|https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</option>
+</select></div></div>
+<div class="row"><div><label for="a_m">Você mudou o material?</label><select id="a_m">
+<option value="n">Não, usei como está</option><option value="p">Mudança pequena (recorte, ajuste de tamanho)</option><option value="a">Adaptei (traduzi, reescrevi, remisturei)</option></select></div>
+<div><label for="a_e">Seu nome (se adaptou)</label><input type="text" id="a_e" placeholder="quem fez a adaptação"></div></div>
+<p style="margin-bottom:0"><button class="btn" id="a_go">Gerar crédito</button></p>
+<div id="a_out"></div>
+<p class="exp">Versão da licença: use a que o original informa. Se o original disser outra versão (3.0, por exemplo), troque no texto. Em licenças ND não é permitido adaptar, e em licenças NC não é permitido uso comercial.</p>
+</section>
+
+<section class="painel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+<p style="margin-top:0">Se você usou IA para criar ou adaptar um material educacional, diga. A plataforma OER Commons passou a esperar isso de quem envia recursos desde 1º de agosto de 2026. Marque o que a IA fez e gere a declaração.</p>
+<div class="lab">O que a IA fez?</div>
+<label class="chk"><input type="checkbox" class="ia" value="o primeiro rascunho do texto"> primeiro rascunho do texto</label>
+<label class="chk"><input type="checkbox" class="ia" value="a estrutura e o roteiro"> estrutura e roteiro</label>
+<label class="chk"><input type="checkbox" class="ia" value="imagens"> imagens</label>
+<label class="chk"><input type="checkbox" class="ia" value="resumos"> resumos</label>
+<label class="chk"><input type="checkbox" class="ia" value="a tradução"> tradução</label>
+<label class="chk"><input type="checkbox" class="ia" value="a revisão ortográfica e de estilo"> revisão ortográfica e de estilo</label>
+<div class="row"><div><label for="i_f">Ferramenta e modelo</label><input type="text" id="i_f" placeholder="ex.: nome do app e do modelo"></div>
+<div><label for="i_r">Quem revisou (nome ou função)</label><input type="text" id="i_r" placeholder="ex.: professora da disciplina"></div></div>
+<p style="margin-bottom:0"><button class="btn" id="i_go">Gerar declaração</button></p>
+<div id="i_out"></div>
+<div class="exp"><strong>Por que declarar.</strong> A Creative Commons orienta que a licença se aplica à parte que um ser humano criou; a parte gerada pela IA pode não ter direito autoral. Nos Estados Unidos, o entendimento é que obra inteiramente gerada por máquina não é protegida. No Brasil, a lei define autor como a pessoa física que cria a obra (art. 11), e <strong>ainda não há lei específica sobre IA e direitos autorais</strong>: o PL 2338/2023 segue na Câmara, e o texto do Senado trata de transparência sobre o que foi usado no treinamento. Por isso: aplique a licença à parte humana, declare o uso de IA e revise tudo.</div>
+</section>
+
+<footer>
+<p><strong>Fontes.</strong> UNESCO, <a href="https://www.unesco.org/en/open-educational-resources/mandate">Recomendação sobre REA (25/11/2019)</a> · Creative Commons, <a href="https://creativecommons.org/share-your-work/cclicenses/">as seis licenças</a>, <a href="https://creativecommons.org/faq/">perguntas frequentes</a>, <a href="https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/">licenças compatíveis</a>, <a href="https://wiki.creativecommons.org/wiki/Best_practices_for_attribution">boas práticas de atribuição</a> · David Wiley, <a href="https://opencontent.org/definition/">os 5 Rs</a> · <a href="https://www2.camara.leg.br/legin/fed/lei/1998/lei-9610-19-fevereiro-1998-365399-publicacaooriginal-1-pl.html">Lei 9.610/1998, texto original (Câmara dos Deputados)</a> · Portaria MEC 451/2018, via Iniciativa Educação Aberta · OER Commons, orientação sobre IA (vigência 01/08/2026).</p>
+<p><strong>Direitos autorais desta página.</strong> © 2026 Vorallito. Todos os direitos reservados. Você pode compartilhar o link e citar trechos curtos, com crédito e endereço. Para copiar a página, adaptá-la ou traduzi-la, peça autorização. Textos de leis não têm proteção autoral (Lei 9.610, art. 8º, IV). Os nomes Creative Commons, UNESCO e demais marcas pertencem aos seus titulares; esta página é independente e não tem vínculo com eles.</p>
+<p>Esta ferramenta resume regras gerais e não analisa o seu caso concreto. Em dúvida, peça autorização ao titular ou consulte um advogado de direito autoral.</p>
+</footer></div>
+<script>
+const LEI='https://www2.camara.leg.br/legin/fed/lei/1998/lei-9610-19-fevereiro-1998-365399-publicacaooriginal-1-pl.html';
+const CC='https://creativecommons.org/share-your-work/cclicenses/';
+const CCFAQ='https://creativecommons.org/faq/';
+const ACAO={aula:'usar em aula sem fazer cópia',copiar:'copiar e compartilhar sem mudar',publicar:'publicar na internet',adaptar:'traduzir, editar ou adaptar',remix:'misturar com outro material',comercial:'usar em curso pago ou produto vendido',ia:'mandar a uma IA para resumir ou adaptar'};
+const NOMES={BY:'CC BY',BYSA:'CC BY-SA',BYNC:'CC BY-NC',BYNCSA:'CC BY-NC-SA',BYND:'CC BY-ND',BYNCND:'CC BY-NC-ND',CC0:'CC0',ARR:'todos os direitos reservados',UNK:'licença desconhecida'};
+const MORAL='Mesmo com licença aberta, os direitos morais do autor continuam: ele pode reivindicar a autoria, ter o nome indicado e se opor a mudanças que prejudiquem a obra ou sua reputação (Lei 9.610, art. 24). Esses direitos são inalienáveis e irrenunciáveis (art. 27).';
+function reaLinha(l){
+ if(l==='BY'||l==='BYSA'||l==='CC0') return 'É REA: a licença permite os cinco usos (guardar, usar, revisar, misturar e redistribuir).';
+ if(l==='BYNC'||l==='BYNCSA') return 'Costuma ser tratado como REA com ressalva: a Iniciativa Educação Aberta diz que a restrição não comercial (NC) pode ser problemática para REA.';
+ if(l==='BYND'||l==='BYNCND') return 'Não é REA: a restrição ND impede adaptar, e adaptar é uma das liberdades que definem REA.';
+ return 'Não é REA: sem licença aberta e sem estar em domínio público, o material não permite os cinco usos. Gratuito não é o mesmo que aberto.';
+}
+function regras(l,a){
+ const cc=['BY','BYSA','BYNC','BYNCSA','BYND','BYNCND'].includes(l);
+ const nc=l.includes('NC'),nd=l.includes('ND'),sa=l.includes('SA');
+ const r={nivel:'ok',titulo:'',porque:[],cond:[],base:[['Licenças Creative Commons',CC]]};
+ if(l==='CC0'){
+  r.titulo='Pode. Não precisa pedir permissão.';
+  r.porque.push('A CC0 é a opção "nenhum direito reservado": o titular abriu mão dos direitos na máxima extensão que a lei permite.');
+  r.cond.push('Atribuição não é exigida, mas citar a fonte é boa prática e ajuda quem vem depois.');
+  r.cond.push('Nenhuma ferramenta jurídica garante a renúncia total em todos os países, e em alguns sistemas os direitos morais não podem ser renunciados. Credite mesmo assim.');
+  if(a==='ia') r.cond.push('Evite enviar dados pessoais a serviços externos.');
+  r.base=[['Sobre a CC0','https://creativecommons.org/public-domain/cc0/']];
+  return r;
+ }
+ if(cc){
+  const porAcao={
+   aula:()=>{r.titulo='Pode, com crédito.';r.porque.push('Todas as licenças CC permitem que você use o material como ele é, desde que dê o crédito ao criador.');},
+   copiar:()=>{r.titulo='Pode, com crédito.';r.porque.push('Copiar e distribuir o material sem alterar está permitido nas seis licenças, desde que haja atribuição.');},
+   publicar:()=>{r.titulo='Pode, com crédito.';r.porque.push('Distribuir o material em qualquer meio está permitido, desde que haja atribuição e que você respeite as demais restrições da licença.');r.cond.push('Mantenha o aviso da licença e um link para ela.');},
+   adaptar:()=>{ if(nd){r.nivel='no';r.titulo='Não pode com esta licença.';r.porque.push('A licença ND permite copiar e distribuir somente sem adaptação. Traduzir, editar ou reescrever é adaptar.');r.cond.push('Peça autorização ao titular, ou procure uma versão do material com licença que permita adaptação.');} else {r.titulo='Pode, com condições.';r.nivel='cond';r.porque.push('Esta licença permite remixar, adaptar e criar a partir do material, com atribuição.');r.cond.push('Indique que você modificou o original e credite o autor original.');} },
+   remix:()=>{ if(nd){r.nivel='no';r.titulo='Não pode com esta licença.';r.porque.push('Misturar o material com outros cria uma obra derivada, e a licença ND não permite derivações.');} else {r.nivel='cond';r.titulo='Pode, com condições.';r.porque.push('Remixar está permitido, com atribuição.');r.cond.push('A licença do resultado precisa respeitar a de cada parte. Se uma parte for CC BY-SA 4.0, as adaptações só podem sair sob CC BY-SA 4.0 ou licença compatível; se for CC BY-NC-SA 4.0, só sob CC BY-NC-SA 4.0 ou compatível.');r.cond.push('Por esse desenho, misturar uma parte BY-SA com outra BY-NC-SA em um único resultado não funciona: o BY-SA 4.0 não lista a BY-NC-SA entre as compatíveis. Esta é a leitura da regra; confirme no site da CC.');} },
+   comercial:()=>{ if(nc){r.nivel='no';r.titulo='Não pode com esta licença.';r.porque.push('A restrição NC permite só uso não comercial.');r.cond.push('Peça autorização ao titular. Onde termina o "comercial" pode ser uma zona cinzenta; curso pago e produto vendido são casos em que o prudente é pedir.');} else {r.titulo='Pode, com crédito.';r.porque.push('Esta licença permite uso comercial, com atribuição.');if(nd)r.cond.push('Somente sem alterar o material (ND).');if(sa)r.cond.push('Se você adaptar, a adaptação sai sob a mesma licença ou compatível.');} },
+   ia:()=>{ if(nd){r.nivel='no';r.titulo='Evite: pode ser adaptação, e a licença não permite.';r.porque.push('Resumir, traduzir ou reescrever com IA produz uma adaptação, e a licença ND só permite copiar e distribuir sem adaptar.');r.cond.push('Use a IA só para ler e tirar dúvidas, sem publicar o resultado, ou peça autorização.');} else {r.nivel='cond';r.titulo='Pode, com as mesmas condições de adaptar.';r.porque.push('Se a IA resume, traduz ou reescreve, o resultado é uma adaptação: valem as condições da licença.');r.cond.push('Credite o original, indique a mudança e declare o uso de IA (aba "Declarar uso de IA").');r.cond.push('Não envie dados pessoais a serviços externos. Não há regra brasileira específica sobre IA e direitos autorais ainda: o PL 2338/2023 não virou lei.');} },
+  };
+  porAcao[a]();
+  if(a==='aula'||a==='copiar'||a==='publicar'||a==='adaptar'||a==='remix'||a==='ia'){
+   if(nc&&r.nivel!=='no') r.cond.push('Apenas uso não comercial (licença NC).');
+   if(sa&&(a==='adaptar'||a==='ia')&&r.nivel!=='no') r.cond.push('Sua adaptação sai sob a mesma licença (SA) ou uma compatível.');
+   if(nd&&(a==='copiar'||a==='publicar'||a==='aula')) r.cond.push('Sem alterar nada no material (ND).');
+  }
+  if(r.nivel==='ok'&&r.cond.length===0) r.cond.push('Dê o crédito completo (aba "Montar o crédito").');
+  r.cond.push('Licenças CC não são revogáveis: quem recebeu o material sob a licença pode continuar a usá-lo nesses termos.');
+  r.base.push(['Perguntas frequentes da CC',CCFAQ]);
+  return r;
+ }
+ r.nivel='auth';
+ r.titulo='Precisa de autorização.';
+ r.porque.push('Sem licença aberta, a regra é a autorização prévia e expressa do autor para reproduzir, adaptar, traduzir e distribuir (Lei 9.610, art. 29).');
+ if(l==='UNK') r.porque.push('Se você não sabe a licença, trate como todos os direitos reservados até confirmar. Falta de aviso não é permissão.');
+ r.base=[['Lei 9.610/1998, texto original',LEI]];
+ const ex={
+  aula:['A lei não tem uma regra geral para exibir qualquer obra em sala. Há casos específicos: a execução musical e a representação teatral para fins exclusivamente didáticos, em estabelecimento de ensino e sem intuito de lucro (art. 46, VI).','A citação de passagens para estudo, crítica ou polêmica, na medida justificada, com nome do autor e origem (art. 46, III).'],
+  copiar:['Reprodução, em um só exemplar, de pequenos trechos, para uso privado de quem copia e sem lucro (art. 46, II).','Reprodução de pequenos trechos em obra nova, sem ser o objetivo principal dela e sem prejudicar a exploração normal da obra original (art. 46, VIII).'],
+  publicar:['A citação de passagens para estudo, crítica ou polêmica, na medida justificada, com nome do autor e origem (art. 46, III).','Pequenos trechos em obra nova, com os limites do art. 46, VIII. Publicar a obra inteira exige autorização.'],
+  adaptar:['Traduzir e adaptar dependem de autorização (art. 29, III e IV). Não há exceção geral para uso educacional.'],
+  remix:['Misturar com outro material é adaptação e depende de autorização (art. 29, III). Dá para usar pequenos trechos (art. 46, VIII) ou citar (art. 46, III), nos limites da lei.'],
+  comercial:['Uso comercial de obra protegida depende de autorização. Não há exceção para curso pago.'],
+  ia:['Reproduzir e adaptar a obra dependem de autorização (art. 29). Não há regra brasileira específica sobre IA ainda; o PL 2338/2023 não virou lei. Por prudência, não envie a obra inteira a um serviço externo sem permissão, e nunca dados pessoais.'],
+ };
+ r.cond.push(...ex[a]);
+ r.cond.push('Para acessibilidade, a lei permite reproduzir obras para uso exclusivo de pessoas com deficiência visual, sem fins comerciais, em Braille ou outro formato acessível (art. 46, I, d).');
+ r.cond.push('Mesmo nas exceções, o autor deve ser creditado e o limite é "o necessário para o fim". Na dúvida, escreva ao titular: muita gente autoriza uso educacional quando é perguntada.');
+ return r;
+}
+function mostra(){
+ const l=document.getElementById('lic').value,a=document.getElementById('acao').value,r=regras(l,a);
+ const el=document.getElementById('resultado');
+ const li=x=>'<li>'+x+'</li>';
+ el.innerHTML='<div class="res '+r.nivel+'"><div class="badge">'+NOMES[l]+' · '+ACAO[a]+'</div><h2>'+r.titulo+'</h2>'+
+  '<h3>Por quê</h3><ul>'+r.porque.map(li).join('')+'</ul>'+
+  '<h3>'+(r.nivel==='auth'?'O que a lei permite em casos específicos':'Condições e cuidados')+'</h3><ul>'+r.cond.map(li).join('')+'</ul>'+
+  '<div class="rea"><strong>É REA?</strong> '+reaLinha(l)+'</div>'+
+  '<div class="rea">'+MORAL+'</div>'+
+  '<div class="base">Base: '+r.base.map(b=>'<a href="'+b[1]+'" target="_blank" rel="noopener">'+b[0]+'</a>').join(' · ')+'</div></div>';
+}
+document.getElementById('lic').onchange=mostra;document.getElementById('acao').onchange=mostra;mostra();
+const tabs=[...document.querySelectorAll('[role=tab]')];
+tabs.forEach((t,i)=>{t.onclick=()=>{tabs.forEach((x,j)=>{x.setAttribute('aria-selected',i===j);document.getElementById('p'+j).hidden=i!==j})};
+ t.onkeydown=e=>{if(e.key==='ArrowRight'){tabs[(i+1)%tabs.length].focus();tabs[(i+1)%tabs.length].click()}if(e.key==='ArrowLeft'){tabs[(i+tabs.length-1)%tabs.length].focus();tabs[(i+tabs.length-1)%tabs.length].click()}}});
+const Q=[
+ {p:'Um material com licença CC BY-ND é um Recurso Educacional Aberto?',o:['Sim, é gratuito e tem licença CC','Não, a restrição ND impede adaptar','Só se for usado em escola pública'],c:1,e:'Para ser REA, o material precisa permitir adaptação. Segundo a Iniciativa Educação Aberta, recursos com a restrição ND não são REA.'},
+ {p:'No Brasil, um autor pode renunciar aos seus direitos morais em um contrato?',o:['Sim, se o contrato disser','Não: são inalienáveis e irrenunciáveis','Só depois de 70 anos'],c:1,e:'Lei 9.610/1998, art. 27: "Os direitos morais do autor são inalienáveis e irrenunciáveis."'},
+ {p:'Por quanto tempo duram os direitos patrimoniais do autor, em regra?',o:['50 anos da publicação','70 anos contados de 1º de janeiro do ano seguinte à morte do autor','Enquanto a obra for vendida'],c:1,e:'Lei 9.610/1998, art. 41: setenta anos, contados de 1º de janeiro do ano subsequente ao falecimento. Depois, a obra cai em domínio público, e os direitos morais continuam.'},
+ {p:'O que o art. 46, III, da Lei 9.610 exige para citar passagens de uma obra em um material de estudo?',o:['Autorização escrita do autor','Citar na medida justificada para o fim e indicar o nome do autor e a origem','Nada: citação é livre'],c:1,e:'A citação é permitida "para fins de estudo, crítica ou polêmica, na medida justificada para o fim a atingir, indicando-se o nome do autor e a origem da obra".'},
+ {p:'Uma licença Creative Commons pode ser revogada depois que você já usa o material?',o:['Sim, a qualquer momento','Não: as licenças CC não são revogáveis','Só se o autor morrer'],c:1,e:'Segundo as perguntas frequentes da Creative Commons, as licenças não são revogáveis. Só podem ser encerradas por quem as descumpre, e isso afeta só essa pessoa.'},
+ {p:'Se um material está sob CC BY, as exceções da lei de direitos autorais deixam de valer para você?',o:['Sim, só vale a licença','Não: a CC não reduz as exceções e limitações previstas em lei','Só nos Estados Unidos'],c:1,e:'Por desenho, as licenças CC "não reduzem, limitam ou restringem" os direitos previstos nas exceções e limitações. Se uma exceção se aplica, você não precisa da licença.'},
+ {p:'No modelo dos 5 Rs de David Wiley, o que significa "Retain" (guardar)?',o:['Publicar o material em um site','Fazer, ter e controlar uma cópia do recurso','Traduzir o recurso'],c:1,e:'Retain: fazer, possuir e controlar uma cópia do recurso. Os outros quatro: reusar, revisar, remixar e redistribuir.'},
+ {p:'Um material tem uma parte gerada por IA e outra escrita por você. A licença CC se aplica a quê, segundo a Creative Commons?',o:['A tudo, sem diferença','À parte criada por um ser humano; a parte gerada pela IA pode não ter direito autoral','A nada'],c:1,e:'A orientação da CC é que a licença vale para a contribuição humana, e a parte gerada pela IA pode não ser protegida. No Brasil, a lei define autor como a pessoa física criadora (art. 11), e o assunto ainda não tem lei específica.'},
+ {p:'A Portaria MEC 451/2018 diz que recursos educacionais da educação básica produzidos com dinheiro do MEC devem ser:',o:['Sempre abertos','Apenas gratuitos','Vendidos pelas editoras'],c:0,e:'A Portaria determina que esses recursos sejam sempre abertos (REA), e distingue "abertos" de "gratuitos". Fonte: Iniciativa Educação Aberta.'},
+];
+let acertos=0,resp=0;
+function desenha(){
+ acertos=0;resp=0;document.getElementById('placar').textContent='';document.getElementById('refazer').style.display='none';
+ const box=document.getElementById('quiz');box.innerHTML='';
+ Q.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='q';
+  d.innerHTML='<p>'+(i+1)+'. '+q.p+'</p>';
+  q.o.forEach((t,j)=>{const b=document.createElement('button');b.className='op';b.textContent=t;
+   b.onclick=()=>{[...d.querySelectorAll('button')].forEach((x,k)=>{x.disabled=true;if(k===q.c)x.classList.add('certa');});
+    if(j===q.c)acertos++;else b.classList.add('errada');
+    const e=document.createElement('div');e.className='exp';e.textContent=(j===q.c?'Certo. ':'Não foi dessa vez. ')+q.e;d.appendChild(e);
+    resp++;if(resp===Q.length){document.getElementById('placar').textContent='Você acertou '+acertos+' de '+Q.length+'.';document.getElementById('refazer').style.display='inline-block';}};
+   d.appendChild(b);});
+  box.appendChild(d);});
+}
+document.getElementById('refazer').onclick=desenha;desenha();
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function copia(txt,btn){navigator.clipboard.writeText(txt).then(()=>{const o=btn.textContent;btn.textContent='Copiado';setTimeout(()=>btn.textContent=o,1500)}).catch(()=>{prompt('Copie:',txt)})}
+document.getElementById('a_go').onclick=()=>{
+ const t=document.getElementById('a_t').value.trim(),au=document.getElementById('a_a').value.trim(),u=document.getElementById('a_u').value.trim(),
+  p=document.getElementById('a_l').value.split('|'),lic=p[0],nome=p[1],link=p[2],m=document.getElementById('a_m').value,ed=document.getElementById('a_e').value.trim();
+ let aviso='';
+ if(m==='a'&&lic.includes('nd'))aviso='Atenção: licenças ND não permitem adaptação. Você não pode adaptar este material sem autorização.';
+ let txt='"'+(t||'[título]')+'"'+(au?' de '+au:' [autor]')+(u?' ('+u+')':' [endereço do original]')+' está licenciado sob '+nome+' ('+link+').';
+ let html='“'+(u?'<a href="'+esc(u)+'">'+esc(t||'título')+'</a>':esc(t||'título'))+'” de '+esc(au||'autor')+' está licenciado sob <a href="'+link+'">'+nome+'</a>.';
+ if(m==='p'){txt+=' Material recortado ou ajustado do original.';html+=' Material recortado ou ajustado do original.';}
+ if(m==='a'){const x=' Adaptação'+(ed?' de '+ed:'')+'. O original foi alterado.';txt+=x;html+=esc(x);}
+ document.getElementById('a_out').innerHTML=(aviso?'<div class="aviso">'+aviso+'</div>':'')+'<div class="out">'+esc(txt)+'</div><p><button class="btn sec" id="a_c1">Copiar</button> <button class="btn sec" id="a_c2">Copiar como HTML</button></p>';
+ document.getElementById('a_c1').onclick=e=>copia(txt,e.target);
+ document.getElementById('a_c2').onclick=e=>copia(html,e.target);
+};
+document.getElementById('i_go').onclick=()=>{
+ const fez=[...document.querySelectorAll('.ia:checked')].map(x=>x.value),f=document.getElementById('i_f').value.trim(),r=document.getElementById('i_r').value.trim();
+ let txt;
+ if(!fez.length){txt='Marque pelo menos uma coisa que a IA fez. Se a IA não foi usada, não precisa de declaração.';}
+ else{
+  const lista=fez.length===1?fez[0]:fez.slice(0,-1).join(', ')+' e '+fez[fez.length-1];
+  txt='Este material teve ajuda de inteligência artificial'+(f?' ('+f+')':'')+' para '+lista+'. '+(r?'Revisão e edição humanas: '+r+', que responde pelo conteúdo.':'O conteúdo foi revisado e editado por uma pessoa, que responde por ele.')+' A licença deste material vale para a contribuição humana.';
+ }
+ document.getElementById('i_out').innerHTML='<div class="out">'+esc(txt)+'</div>'+(fez.length?'<p><button class="btn sec" id="i_c">Copiar</button></p>':'');
+ if(fez.length)document.getElementById('i_c').onclick=e=>copia(txt,e.target);
+};
+</script></body></html>
